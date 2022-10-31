@@ -1,4 +1,4 @@
-# LOLai
+# LOLai - frontend + backend
 
 ![image](https://user-images.githubusercontent.com/97097656/199012714-a61f748c-7b41-4dc5-8c50-b2d3c9992573.png)
 
