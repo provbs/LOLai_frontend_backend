@@ -1,0 +1,822 @@
+*{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 18px;
+	list-style: none;
+	text-decoration: none;
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+	color: #000;
+	text-shadow: 1.5px 1.5px 1px black;
+}
+
+body{
+	background-color: #1D1D1D;
+}
+
+.boxAll{
+	position:relative;
+	left: 50%;
+	margin: 0 0 0 -425px;
+}
+
+.box1{
+		/*박스 1의 크기는 searchBox + 사이마진 + logoBox 이다*/
+		width:  850px;
+		height: 100px;
+		position: relative;
+		margin-top: 50px;
+}
+
+.logoBox{
+	float : left;
+	margin-right: 198px;
+}
+
+.searchBox{
+	width: 350px;
+	height : 50px;
+	/*background-image: url("search_box.png");*/
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+}
+
+.searchBox > form > .div1 > .searchbox_img{
+	width:350px;
+	height: 50px;
+	position: absolute;
+	left: 0px;
+}
+
+.searchBox > form > .div1{
+	position: relative;
+	margin-top: 15px;
+}
+.searchBox > form > .div2{
+	position: relative;
+	margin-top: 15px;
+}
+
+.searchBox > form{
+	display: flex;
+	padding-top: 3px;
+}
+.searchBox > form > .div1 > input{
+	width: 300px;
+	height: 30px;
+	font-size: 17px;
+	color: #1D1D1D;
+	border: none;
+	background: transparent;
+	padding-left: 8px;
+	position: relative;
+	text-shadow: none;
+}
+
+.searchBox > form > .div1 > input::placeholder{
+	color: grey;
+	text-shadow: none;
+}
+
+.searchBox > form > .div1 > input:focus{
+	outline: none;
+}
+
+.searchBox > form > .div2 > input{
+	width: 43px;
+	height: 25px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	border: none;
+	border-width: 0px;
+	box-shadow: none;
+	outline : none;
+	background-color: transparent;
+	position: relative;
+	top: 3px;
+	z-index: 2;
+}
+
+
+.box2{
+ position: relative;
+ top: 20px;
+
+	/*박스 2의 크기는 box 1과 width + 양측 ad box + 중간 마진들 의 합이다*/
+	/* 여기서 마진은 50px 씩 양쪽으로 있다. */
+	width:  1350px;
+	height: 1470px;
+	right: 250px;
+}
+
+.box2 > .box2_2{
+	width: 850px;
+	height: 1000px;
+	position: relative;
+	left: 50px;
+	float : left;
+}
+
+.box2 > .box2_2 > .userinfoBox_big{
+	width: 350px;
+	height: 250px;
+	position: relative;
+	float: left;
+}
+
+.box2 > .box2_2 >.userinfoBox_big > .userinfoBox > .name{
+	font-size : 30px;
+	width: 350px;
+	height: 50px;
+	color : white;
+}
+
+.box2 > .box2_2 > .userinfoBox_big >.userinfoBox > .infoBox{
+	width: 350px;
+	height: 220px;
+	color : white;
+}
+
+.box2 > .box2_2 > .userinfoBox_big >.userinfoBox > .infoBox > .info_box_img{
+	width: 360px;
+	height: 220px;
+	position: absolute;
+	float: left;
+}
+
+.box2 > .box2_2 > .userinfoBox_big >.userinfoBox > .infoBox > .tier_emblem{
+	width: 165px;
+	height: 190px;
+	position: relative;
+	left: 10px;
+	top : 10px;
+	float: left;
+}
+
+.box2 > .box2_2 > .userinfoBox_big >.userinfoBox > .infoBox > .tier_explain{
+	width: 160px;
+	height: 190px;
+	position: relative;
+	left : 20px;
+	float: left;
+}
+
+.box2 > .box2_2 > .userinfoBox_big >.userinfoBox > .infoBox > .tier_explain > .top {
+	font-family: 'Press Start 2P', cursive;
+	font-size : 13px;
+	position : relative;
+	color: white;
+	top: 35px;
+}
+.box2 > .box2_2 > .userinfoBox_big >.userinfoBox > .infoBox > .tier_explain > .top > .font_color {
+	font-family: 'Press Start 2P', cursive;
+	font-size : 13px;
+	color : rgba(0, 255, 71, 1)
+}
+.box2 > .box2_2 > .userinfoBox_big >.userinfoBox > .infoBox > .tier_explain > .bottom {
+	font-family: 'Press Start 2P', cursive;
+	font-size : 12px;
+	position : relative;
+	color: white;
+	top: 35px;
+}
+.box2 > .box2_2 > .userinfoBox_big >.userinfoBox > .infoBox > .tier_explain > .bottom > .font_color {
+	font-family: 'Press Start 2P', cursive;
+	font-size : 12px;
+	color : rgba(0, 255, 71, 1)
+}
+
+.box2 > .box2_2 > .lolpagoscoreBox {
+	width: 480px;
+	height: 230px;
+	color : black;
+	position: relative;
+	top: 50px;
+	left : 20px;
+	float : left;
+}
+
+.box2 > .box2_2 > .lolpagoscoreBox > .score_box_img{
+	width: 480px;
+	height: 220px;
+	position: absolute;
+	float: left;
+}
+
+.box2 > .box2_2 > .lolpagoscoreBox > .lolpagoscore_grade {
+	position: relative;
+	font-family: 'Press Start 2P', cursive;
+	font-size : 30px;
+	width: 200px;
+	text-align: : center;
+	top: 50px;
+	left: 150px;
+	color : yellow;
+}
+.box2 > .box2_2 > .lolpagoscoreBox > .lolpagoscore_score {
+	position: relative;
+	font-family: 'Press Start 2P', cursive;
+	font-size : 15px;
+	width: 200px;
+	text-align: : center;
+	top:60px;
+	left: 150px;
+	color : yellow;
+}
+.box2 > .box2_2 > .lolpagoscoreBox > .lolpagoscore_title {
+	font-family: 'Press Start 2P', cursive;
+	width: 150px;
+	font-size : 15px;
+	color : yellow;
+	left: 5px;
+	top: 5px;
+	position: relative;
+}
+
+.box2 > .box2_2 > .lolpagoscoreBox > .lolpagoscore_explanation {
+	font-size : 12px;
+	color: white;
+	position: relative;
+	top: 142px;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox{
+		clear: both;
+		width:  850px;
+		height: 1270px;
+		margin-top: 290px;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .generalanalysis_box_img{
+		width:  855px;
+		height: 1270px;
+		position: absolute;
+		float: left;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .comment{
+		left: 5px;
+		width:  855px;
+		height: 30px;
+		position: relative;
+		color: lightgrey;
+		font-size: 13px;
+		text-shadow: 1.0px 1px 0.5px black;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .title{
+		width:  850px;
+		height: 140px;
+		text-align : center;
+		font-weight: bold;
+		position: relative;
+		color: white;
+		font-size: 30px;
+		text-shadow: 1.0px 1px 0.5px black;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .player_chart{
+	width:  850px;
+	height: 270px;
+	position: relative;
+
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .player_chart > .chart_box{
+	width:  320px;
+	height: 300px;
+	position: relative;
+	background-image: url(cmd.png);
+	background-size: 300px 270px;
+	margin-left: 280px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .player_chart > .chart_box > .chart_title{
+	width:  370px;
+	height: 20px;
+	text-align : left;
+	position: absolute;
+	text-shadow: none;
+	top: 7px;
+	left : 30px;
+	color: white;
+	font-size : 13px;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .player_chart > .chart_box > .charts--vertical{
+	width:  250px;
+	height: 180px;
+	position: relative;
+	margin-left : 20px;
+	top: 50px;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .player_chart > .chart_box > .chart_explanation{
+	width:  350px;
+	height: 50px;
+	text-align : left;
+	position: absolute;
+	text-shadow: none;
+	top: 250px;
+	left : 30px;
+	color: white;
+	font-size : 16px;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .player_chart > .chart_box > .chart_percentage{
+	width:  350px;
+	height: 50px;
+	text-align : left;
+	position: absolute;
+	text-shadow: none;
+	top: 230px;
+	left : 23px;
+	color: white;
+	font-size : 17px;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .player_chart > .chart_box > .chart_percentage_2{
+	width:  350px;
+	height: 50px;
+	text-align : left;
+	position: absolute;
+	text-shadow: none;
+	top: 230px;
+	left : 170px;
+	color: white;
+	font-size : 17px;
+}
+
+
+.box2 > .box2_2 > .generalAnalysisBox > .grade_comment{
+		width:  850px;
+		height: 80px;
+		text-align : center;
+		position: relative;
+		color: lightgrey;
+		font-size: 13px;
+		text-shadow: 1.0px 1px 0.5px black;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .grade_comment> .sen1{
+		color : rgba(0, 255, 71, 1);
+		font-size: 13px;
+		text-shadow: 1.0px 1px 0.5px black;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .positive{
+	width: 820px;
+	height: 240px;
+	margin-top: 40px;
+	margin-left : 14px;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .positive > .positive_box_img{
+		width: 820px;
+		height: 240px;
+		position: absolute;
+		float: left;
+}
+.box2 > .box2_2 > .generalAnalysisBox > .positive > .title{
+	width:  850px;
+	height: 30px;
+	text-align : left;
+	position: relative;
+	color: magenta;
+	font-size: 18px;
+	margin-left: 15px;
+	top : 5px;
+	text-shadow: 1.0px 1px 0.5px black;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .positive > .factor1{
+	width:  330px;
+	height: 180px;
+	position: relative;
+	margin-left: 30px;
+	top : 5px;
+	float: left;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .positive > .factor1 > .factor_title{
+	position: relative;
+	color: white;
+	font-size: 18px;
+	text-shadow: 1.0px 1px 0.5px black;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .positive > .factor1 > .factor_number{
+	position: relative;
+	color: white;
+	font-size: 35px;
+	text-shadow: 1.0px 1px 0.5px black;
+	float: left;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .positive > .factor1 > .factor_grade{
+	position: relative;
+	color: #4EF1FC;
+	font-size: 50px;
+	text-shadow: 1.0px 1px 0.5px black;
+	font-weight: bold;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .positive > .factor1 > .factor_average{
+	position: relative;
+	color: white;
+	font-size: 15px;
+	text-shadow: 1.0px 1px 0.5px black;
+}
+
+
+.box2 > .box2_2 > .generalAnalysisBox > .positive > .factor2{
+	width:  330px;
+	height: 180px;
+	position: relative;
+	float: left;
+	margin-left: 70px;
+	top : 5px;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .positive > .factor2 > .factor_title{
+	position: relative;
+	color: white;
+	font-size: 18px;
+	text-shadow: 1.0px 1px 0.5px black;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .positive > .factor2 > .factor_number{
+	position: relative;
+	color: white;
+	font-size: 35px;
+	text-shadow: 1.0px 1px 0.5px black;
+	float: left;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .positive > .factor2 > .factor_grade{
+	position: relative;
+	color: #4EF1FC;
+	font-size: 50px;
+	text-shadow: 1.0px 1px 0.5px black;
+	font-weight: bold;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .positive > .factor2 > .factor_average{
+	position: relative;
+	color: white;
+	font-size: 15px;
+	text-shadow: 1.0px 1px 0.5px black;
+}
+
+
+.box2 > .box2_2 > .generalAnalysisBox > .negative{
+	width: 820px;
+	height: 240px;
+	margin-top: 10px;
+	margin-left : 14px;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .negative > .negative_box_img{
+		width: 820px;
+		height: 240px;
+		position: absolute;
+		float: left;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .negative > .title{
+	width:  850px;
+	height: 30px;
+	text-align : left;
+	position: relative;
+	color: magenta;
+	font-size: 18px;
+	margin-left: 15px;
+	top : 5px;
+	text-shadow: 1.0px 1px 0.5px black;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .negative > .factor1{
+	width:  330px;
+	height: 180px;
+	position: relative;
+	margin-left: 30px;
+	top : 5px;
+	float: left;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .negative > .factor1 > .factor_title{
+	position: relative;
+	color: white;
+	font-size: 18px;
+	text-shadow: 1.0px 1px 0.5px black;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .negative > .factor1 > .factor_number{
+	position: relative;
+	color: white;
+	font-size: 35px;
+	text-shadow: 1.0px 1px 0.5px black;
+	float: left;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .negative > .factor1 > .factor_grade{
+	position: relative;
+	color: #4EF1FC;
+	font-size: 50px;
+	text-shadow: 1.0px 1px 0.5px black;
+	font-weight: bold;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .negative > .factor1 > .factor_average{
+	position: relative;
+	color: white;
+	font-size: 15px;
+	text-shadow: 1.0px 1px 0.5px black;
+}
+
+
+.box2 > .box2_2 > .generalAnalysisBox > .negative > .factor2{
+	width:  330px;
+	height: 180px;
+	position: relative;
+	float: left;
+	margin-left: 70px;
+	top : 5px;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .negative > .factor2 > .factor_title{
+	position: relative;
+	color: white;
+	font-size: 18px;
+	text-shadow: 1.0px 1px 0.5px black;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .negative > .factor2 > .factor_number{
+	position: relative;
+	color: white;
+	font-size: 35px;
+	text-shadow: 1.0px 1px 0.5px black;
+	float: left;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .negative > .factor2 > .factor_grade{
+	position: relative;
+	color: #4EF1FC;
+	font-size: 50px;
+	text-shadow: 1.0px 1px 0.5px black;
+	font-weight: bold;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .negative > .factor2 > .factor_average{
+	position: relative;
+	color: white;
+	font-size: 15px;
+	text-shadow: 1.0px 1px 0.5px black;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .expected_box{
+	position: relative;
+	width:  800px;
+	height: 130px;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .expected_box > .expected_line_win_rate{
+	position: relative;
+	margin-left: 15px;
+	width:  350px;
+	height: 100px;
+	float: left;
+	color: white;
+	text-align: center;
+}
+.box2 > .box2_2 > .generalAnalysisBox > .expected_box > .expected_line_win_rate >.letter_color{
+	font-size: 30px;
+	color: rgba(0, 255, 71, 1);
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .expected_box > .expected_promotion_rate{
+	position: relative;
+	width:  350px;
+	margin-right: 40px;
+	height: 100px;
+	float: right;
+	color: white;
+	text-align: center;
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .expected_box > .expected_promotion_rate >.letter_color{
+	font-size: 30px;
+	color: rgba(0, 255, 71, 1);
+}
+
+.box2 > .box2_2 > .generalAnalysisBox > .comment_bottom{
+	position: relative;
+	width:  800px;
+	height: 130px;
+	margin-top: 10px;
+	margin-left: 20px;
+	color: white;
+	font-size: 15px;
+	text-align: center;
+}
+
+.adv{
+	color: black;
+}
+
+
+.adBox1{
+	width: 200px;
+	height: 700px;
+	background-color: white;
+	position: relative;
+	float : left;
+	top: 50px;
+}
+
+.adBox2{
+	width: 200px;
+	height: 700px;
+	background-color: skyblue;
+	position: relative;
+	float : right;
+	top: 50px;
+}
+
+
+.box3{
+	/*박스 3의 크기는 박스1과 같다*/
+	width:  850px;
+	height: 1100px;
+	background-color: coral;
+	margin-top: 120px;
+}
+
+.box3 > .title{
+	text-align: center;
+	color: white;
+	font-size : 30px;
+	font-weight: bold;
+}
+
+.box3 > .sub_title{
+	text-align: center;
+	color: white;
+	font-size : 15px;
+	text-shadow: none;
+}
+
+.box3 > .matchinfoBox{
+	width: 850px;
+	height: 900px;
+	background-color: green;
+}
+
+.box3 > .matchinfoBox > .match_box{
+	width: 850px;
+	height: 170px;
+}
+
+.box3 > .matchinfoBox > .match_box > .match_box_img{
+	position: absolute;
+	width: 800px;
+	height: 150px;
+	margin-left: 25px;
+	margin-top: 25px;
+}
+
+.box3 > .matchinfoBox > .match_box > .block1{
+	position:relative;
+	float: left;
+	font-size: 20px;
+	color: white;
+	margin-left: 45px;
+	margin-top: 55px;
+	width: 100px;
+	height: 80px;
+	text-align: center;
+}
+
+.box3 > .matchinfoBox > .match_box > .block1 > .sub1{
+	font-size : 35px;
+	color : magenta;
+}
+
+
+.box3 > .matchinfoBox > .match_box > .block2{
+	position:relative;
+	float: left;
+	font-size: 20px;
+	color: white;
+	margin-left: 20px;
+	margin-top: 45px;
+	width: 80px;
+	height: 80px;
+}
+
+.box3 > .matchinfoBox > .match_box > .block2 > .champion_pic{
+	position:relative;
+	width: 80px;
+	height: 80px;
+}
+
+.box3 > .matchinfoBox > .match_box > .block3{
+	position:relative;
+	float: left;
+	font-size: 20px;
+	color: white;
+	margin-left: 20px;
+	margin-top: 60px;
+	width: 100px;
+	height: 70px;
+	text-align: center;
+}
+
+.box3 > .matchinfoBox > .match_box > .block4{
+	position:relative;
+	float: left;
+	font-size: 20px;
+	color: white;
+	margin-left: 20px;
+	margin-top: 60px;
+	width: 120px;
+	height: 70px;
+	text-align: center;
+}
+
+.box3 > .matchinfoBox > .match_box > .block5{
+	position:relative;
+	float: left;
+	font-size: 50px;
+	color: white;
+	margin-left: 25px;
+	margin-top: 50px;
+	width: 120px;
+	height: 80px;
+	text-align: center;
+}
+
+.box3 > .matchinfoBox > .match_box > .button{
+	position:relative;
+	float: left;
+	font-size: 20px;
+	color: white;
+	margin-left: 50px;
+	margin-top: 80px;
+	width: 60px;
+	height: 30px;
+}
+.box3 > .matchinfoBox > .match_box > .button > input{
+	width: 60px;
+	height: 30px;
+	background-image: url(exe_button.png);
+	background-size: 60px 30px;
+
+	cursor: pointer;
+	background-repeat: no-repeat;
+	border: none;
+	border-width: 0px;
+	box-shadow: none;
+	outline : none;
+}
+
+.box3 > .matchinfoBox > .match_box > .button > input:focus{
+	outline: none;
+}
+
+
+.box3 > .matchinfoBox >.comment {
+	margin-top: 20px;
+	font-size: 15px;
+	color: lightgrey;
+	text-align: center;
+}
+
+footer{
+	width: 400px;
+	height: 100px;
+
+	position: relative;
+	left: 50%;
+	margin: 0 0 0 -200px;
+	top : 100px;
+}
+
+footer > p{
+	color:white;
+	font-size : 10px;
+}
+
+
+
+img[src$=".gif"], img[src$=".png"] {
+image-rendering: -moz-crisp-edges; /* Firefox */
+image-rendering: -o-crisp-edges; /* Opera */
+image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+image-rendering: crisp-edges;
+-ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}

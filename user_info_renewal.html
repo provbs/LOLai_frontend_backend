@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang = "ko">
+
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdn.rawgit.com/theus/chart.css/v1.0.0/dist/chart.css" />
+
+	<link rel = "stylesheet" type = "text/css" href = "../../style_user_info_renewal.css">
+
+	<meta charset="utf-8">
+	<title> 인공지능 롤 리포트 - LOLai.net </title>
+</head>
+
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js">
+	</script>
+	<!-- div top : 타이틀, 검색바 -->
+	<div class = "top">
+		<div class = "top_box">
+			<div class = "title_logo">
+				<img src="../../lolai_logo.png" width="559px" height = "122px">
+			</div>
+
+			<div class = "search_box">
+				<form action = "../../py\q_w.py?update=False" method = "post">
+
+					<div class = "part1">
+						<img src="../../search_box.png" class="searchbox_img"/>
+						<input type = "search" name = "nickname" placeholder="분석할 소환사 이름을 입력해주세요." autocomplete="off">
+					</div>
+
+					<div class = "part2">
+						<input type="submit" value = "">
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class = "mid">
+		<!-- mid_left : ad_left_1, ad_left_2, ad_left_3 -->
+		<div class = "mid_left">
+			<div class = "ad_left_1">
+				ad_left_1
+			</div>
+			<div class = "ad_left_2">
+				ad_left_2
+			</div>
+			<div class = "ad_left_3">
+				ad_left_3
+			</div>
+		</div>
+
+		<!-- mid_middle : 플레이어 정보 박스, 종합분석결과 박스, 전적 박스 -->
+		<div class = "mid_middle">
+			<div class = "m_m_box1">
+				<!-- 플레이어 정보 박스 :
+				, top - name, update_button, update_info
+				, middle - tier_image, tier_info, lolai_score, recent_match_info
+				, bottom - comment-->
+				<div class = "m_m_box1_top">
+					<div class = "m_m_b1_t_top">
+						<div class = "name">
+							{nickname}
+						</div>
+						<div class = "update_button">
+							<input type = "button" class = "update_btn" value = "업데이트" onclick = "location.href='../../py/q_w.py?nickname={nickname}&update=True';">
+						</div>
+						<div class = "update_info">
+							{update_date}일에 마지막으로 갱신하였습니다.
+						</div>
+					</div>
+						<div class = "line">
+							<img src="../../line.png">
+						</div>
+				</div>
+
+				<div class = "m_m_box1_mid">
+					<div class = "tier_box1">
+						<div class = "tier_image">
+							<img src = "../../ranked_emblems/Emblem_{tier}.png">
+						</div>
+						<div class = "tier_info">
+							<div class = "rank_type">
+								5 X 5 솔로랭크
+							</div>
+							<div class = "tier_title">
+								{tier} {tier_num} <br> {LP}
+							</div>
+							<div class = "match_numbers">
+								{total_match_number} 경기 {wins}승 {losses}패 <br> (승률 {win_rate}%)
+							</div>
+						</div>
+					</div>
+
+					<div class = "lolai_score">
+						<div class = "lolai_score_title">
+							LOLai Score
+						</div>
+						<div class = "lolai_score_letter">
+							{lolai_score_letter}
+						</div>
+						<div class = "lolai_score_number">
+							{lolai_score_number}
+						</div>
+					</div>
+					<div class = "recent_match_info">
+						<div class = "match_info_title">
+							최근 랭크매치 전적
+						</div>
+						<div class = "match_info_history">
+							{recent_match_history}
+						</div>
+						<div class = "match_info_rate">
+							(승률 {recent_win_rate}%)
+						</div>
+					</div>
+				</div>
+
+				<div class = "m_m_box1_bot">
+					<div class = "line">
+						<img src="../../line.png">
+					</div>
+					<div class = "comment">
+						LOLai Score는 해당 유저의 최근 10게임에 대한 인공지능 LOLai의 분석점수 입니다.
+					</div>
+				</div>
+
+			</div>
+			<div class = "m_m_box2">
+				<!-- 종합분석결과 박스 :
+				, top - title, line, comment
+				, middle_1 - image, lolai_score, lolai_score_comment
+				, middle_2 - positive, negative
+				, middle_3 - expect_win_rate, expect_promo_rate
+				, bottom - comment -->
+				<div class = "title_box">
+					<div class = "name">
+						{nickname}
+					</div>
+					<div class = "title">
+						님의 랭크 매치 인공지능 분석 결과 (최근 10게임 종합)
+					</div>
+					<div class = "line">
+						<img src="../../line.png">
+					</div>
+					<div class = "comment">
+						Riot 공식 데이터베이스를 사용한 머신러닝 학습을 통해 분석된 결과입니다.
+						<br>
+						차트들의 레이블(요소)들을 눌러 제거하거나, 차트 위에 마우스를 올려 자세한 정보를 살펴보세요.
+					</div>
+				</div>
+				<div class = "middle_box1">
+					<div class = "chart">
+						<canvas id="radar-chart"></canvas>
+					</div>
+					<div class = "lolai_score">
+						<div class = "title">
+							LOLai Score
+						</div>
+						<div class = "letter">
+							{lolai_score_letter}
+						</div>
+						<div class = "score">
+							{lolai_score_number}
+						</div>
+					</div>
+					<div class = "robot_img">
+						<img src = "../../robot.png">
+					</div>
+					<div class = "lolai_score_comment">
+						"{lolai_score_comment}"
+					</div>
+					<div class = "line">
+						<img src="../../line.png">
+					</div>
+					<div class = "comment">
+						LOLai Score는 30개 이상의 승리/패배요인으로 학습된 머신러닝 분석 종합 점수입니다.
+					</div>
+				</div>
+				<div class = "middle_box2">
+					<div class = "comment1">
+						승리와 패배에는 분명한 이유가 있습니다.
+					</div>
+					<div class = "comment2">
+						{nickname} 님의 승리/패배에는 어떤 요소들이 가장 크게 작용하였나요?
+					</div>
+					<div class = "chart2">
+						<canvas id="polar-chart-positive"></canvas>
+					</div>
+					<div class = "chart3">
+						<canvas id="polar-chart-negative"></canvas>
+					</div>
+					<div class = "comment3">
+						긍정적 관여 요소
+					</div>
+					<div class = "comment4">
+						부정적 관여 요소
+					</div>
+				</div>
+				<div class = "middle_box3">
+					<div class = "comment1">
+						현재 퍼포먼스를 다른 티어평균과 비교해보았습니다.
+					</div>
+					<div class = "comment2">
+						적을 알고 나를 알면 백전백승! 현재 나의 위치를 확인해 보세요.
+					</div>
+					<!-- <div class = "chart4">
+						<canvas id = "bar-chart-comparison"> </canvas>
+					</div> -->
+				</div>
+				<div class = "middle_box4">
+					<div class = "comment1">
+						{nickname} 님의 최근 매치 LOLai점수 동향입니다.
+					</div>
+					<div class = "comment2">
+						컨디션 관리도 실력, 최근 트렌드를 보면서 본인의 현재 폼을 알아보세요.
+					</div>
+					<div class = "chart5">
+						<canvas id = "chart_line"> </canvas>
+					</div>
+				</div>
+				<div class = "bottom_box">
+					<div class = "line">
+						<img src="../../line.png">
+					</div>
+					<div class = "box">
+							<img src = "../../robot.png">
+							<div class = "comment1">
+								“제 생각에는요..”
+							</div>
+							<div class = "comment2">
+								다음 티어 승급 확률:  {expected_promo}% <br>
+								다음 10게임 예상 승률:  {expected_win_rate}%
+							</div>
+					</div>
+				</div>
+				<div class = "bottom_box2">
+					<div class = "line">
+						<img src = "../../line.png">
+					</div>
+					<div class = "comment_final">
+						해당 인공지능 분석은 30개 이상의 승리요인과 패배요인으로 세분화된 분야의 데이터를 사용하여 머신러닝 학습을 시킨 인공지능 모델의 분석결과입니다.
+					</div>
+				</div>
+			</div>
+
+
+			<div class = "m_m_box3">
+				<!-- 전적 박스 :
+				, matchbox - box1, box2, box3, box4, box5
+				5번 반복.-->
+				<div class = "match_box" style = 'background-color: {match_1_box_color}'>
+					<div class = "block1">
+						{match_1_bool_win} <br> {match_1_length}
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block2">
+						<div class = "champ">
+							챔피언 <br>
+							<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_1_champ}.png">
+						</div>
+						<div class = "level">
+							<div class = "title">
+								LEVEL <br>
+							</div>
+							{match_1_level}
+						</div>
+						<div class = "kda">
+							<div class = "title">
+								KDA <br>
+							</div>
+							{match_1_kda} <br>
+							({match_1_kda_percentage} kda)
+						</div>
+						<div class = "cs">
+							<div class = "title">
+								Total CS <br>
+							</div>
+							{match_1_cs} cs <br>
+							(분당 {match_1_cs_per_minuite}개)
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block3">
+						<div class = "team1">
+							<div class = "player1">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_1_player_1_champ}.png">
+								<div class = "name">
+									{match_1_player_1}
+								</div>
+							</div>
+							<div class = "player2">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_1_player_2_champ}.png">
+								<div class = "name">
+									{match_1_player_2}
+								</div>
+							</div>
+							<div class = "player3">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_1_player_3_champ}.png">
+								<div class = "name">
+									{match_1_player_3}
+								</div>
+							</div>
+							<div class = "player4">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_1_player_4_champ}.png">
+								<div class = "name">
+									{match_1_player_4}
+								</div>
+							</div>
+							<div class = "player5">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_1_player_5_champ}.png">
+								<div class = "name">
+									{match_1_player_5}
+								</div>
+							</div>
+						</div>
+						<div class = "team2">
+							<div class = "player6">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_1_player_6_champ}.png">
+								<div class = "name">
+									{match_1_player_6}
+								</div>
+							</div>
+							<div class = "player7">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_1_player_7_champ}.png">
+								<div class = "name">
+									{match_1_player_7}
+								</div>
+							</div>
+							<div class = "player8">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_1_player_8_champ}.png">
+								<div class = "name">
+									{match_1_player_8}
+								</div>
+							</div>
+							<div class = "player9">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_1_player_9_champ}.png">
+								<div class = "name">
+									{match_1_player_9}
+								</div>
+							</div>
+							<div class = "player10">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_1_player_10_champ}.png">
+								<div class = "name">
+									{match_1_player_10}
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block4">
+						<div class = "player_score">
+							LOLai<br> Score <br>
+						</div>
+						<div class = "lolai_score_letter">
+							{match_1_lolai_score_letter}
+						</div>
+					</div>
+
+					<div class = "block5">
+							<button class = "button" onclick = "location.href='{match1_page_link}';">
+								AI 매치분석<br>바로가기
+							</button>
+					</div>
+				</div>
+
+				<div class = "match_box" style = 'background-color: {match_2_box_color}'>
+					<div class = "block1">
+						{match_2_bool_win} <br> {match_2_length}
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block2">
+						<div class = "champ">
+							챔피언 <br>
+							<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_2_champ}.png">
+						</div>
+						<div class = "level">
+							<div class = "title">
+								LEVEL <br>
+							</div>
+							{match_2_level}
+						</div>
+						<div class = "kda">
+							<div class = "title">
+								KDA <br>
+							</div>
+							{match_2_kda} <br>
+							({match_2_kda_percentage} kda)
+						</div>
+						<div class = "cs">
+							<div class = "title">
+								Total CS <br>
+							</div>
+							{match_2_cs} cs <br>
+							(분당 {match_2_cs_per_minuite}개)
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block3">
+						<div class = "team1">
+							<div class = "player1">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_2_player_1_champ}.png">
+								<div class = "name">
+									{match_2_player_1}
+								</div>
+							</div>
+							<div class = "player2">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_2_player_2_champ}.png">
+								<div class = "name">
+									{match_2_player_2}
+								</div>
+							</div>
+							<div class = "player3">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_2_player_3_champ}.png">
+								<div class = "name">
+									{match_2_player_3}
+								</div>
+							</div>
+							<div class = "player4">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_2_player_4_champ}.png">
+								<div class = "name">
+									{match_2_player_4}
+								</div>
+							</div>
+							<div class = "player5">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_2_player_5_champ}.png">
+								<div class = "name">
+									{match_2_player_5}
+								</div>
+							</div>
+						</div>
+						<div class = "team2">
+							<div class = "player6">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_2_player_6_champ}.png">
+								<div class = "name">
+									{match_2_player_6}
+								</div>
+							</div>
+							<div class = "player7">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_2_player_7_champ}.png">
+								<div class = "name">
+									{match_2_player_7}
+								</div>
+							</div>
+							<div class = "player8">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_2_player_8_champ}.png">
+								<div class = "name">
+									{match_2_player_8}
+								</div>
+							</div>
+							<div class = "player9">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_2_player_9_champ}.png">
+								<div class = "name">
+									{match_2_player_9}
+								</div>
+							</div>
+							<div class = "player10">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_2_player_10_champ}.png">
+								<div class = "name">
+									{match_2_player_10}
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block4">
+						<div class = "player_score">
+							LOLai<br> Score <br>
+						</div>
+						<div class = "lolai_score_letter">
+							{match_2_lolai_score_letter}
+						</div>
+					</div>
+
+					<div class = "block5">
+							<button class = "button" onclick = "location.href='{match2_page_link}';">
+								AI 매치분석<br>바로가기
+							</button>
+					</div>
+				</div>
+
+				<div class = "match_box" style = 'background-color: {match_3_box_color}'>
+					<div class = "block1">
+						{match_3_bool_win} <br> {match_3_length}
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block2">
+						<div class = "champ">
+							챔피언 <br>
+							<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_3_champ}.png">
+						</div>
+						<div class = "level">
+							<div class = "title">
+								LEVEL <br>
+							</div>
+							{match_3_level}
+						</div>
+						<div class = "kda">
+							<div class = "title">
+								KDA <br>
+							</div>
+							{match_3_kda} <br>
+							({match_3_kda_percentage} kda)
+						</div>
+						<div class = "cs">
+							<div class = "title">
+								Total CS <br>
+							</div>
+							{match_3_cs} cs <br>
+							(분당 {match_3_cs_per_minuite}개)
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block3">
+						<div class = "team1">
+							<div class = "player1">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_3_player_1_champ}.png">
+								<div class = "name">
+									{match_3_player_1}
+								</div>
+							</div>
+							<div class = "player2">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_3_player_2_champ}.png">
+								<div class = "name">
+									{match_3_player_2}
+								</div>
+							</div>
+							<div class = "player3">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_3_player_3_champ}.png">
+								<div class = "name">
+									{match_3_player_3}
+								</div>
+							</div>
+							<div class = "player4">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_3_player_4_champ}.png">
+								<div class = "name">
+									{match_3_player_4}
+								</div>
+							</div>
+							<div class = "player5">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_3_player_5_champ}.png">
+								<div class = "name">
+									{match_3_player_5}
+								</div>
+							</div>
+						</div>
+						<div class = "team2">
+							<div class = "player6">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_3_player_6_champ}.png">
+								<div class = "name">
+									{match_3_player_6}
+								</div>
+							</div>
+							<div class = "player7">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_3_player_7_champ}.png">
+								<div class = "name">
+									{match_3_player_7}
+								</div>
+							</div>
+							<div class = "player8">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_3_player_8_champ}.png">
+								<div class = "name">
+									{match_3_player_8}
+								</div>
+							</div>
+							<div class = "player9">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_3_player_9_champ}.png">
+								<div class = "name">
+									{match_3_player_9}
+								</div>
+							</div>
+							<div class = "player10">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_3_player_10_champ}.png">
+								<div class = "name">
+									{match_3_player_10}
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block4">
+						<div class = "player_score">
+							LOLai<br> Score <br>
+						</div>
+						<div class = "lolai_score_letter">
+							{match_3_lolai_score_letter}
+						</div>
+					</div>
+
+					<div class = "block5">
+							<button class = "button" onclick = "location.href='{match3_page_link}';">
+								AI 매치분석<br>바로가기
+							</button>
+					</div>
+				</div>
+
+				<div class = "match_box" style = 'background-color: {match_4_box_color}'>
+					<div class = "block1">
+						{match_4_bool_win} <br> {match_4_length}
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block2">
+						<div class = "champ">
+							챔피언 <br>
+							<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_4_champ}.png">
+						</div>
+						<div class = "level">
+							<div class = "title">
+								LEVEL <br>
+							</div>
+							{match_4_level}
+						</div>
+						<div class = "kda">
+							<div class = "title">
+								KDA <br>
+							</div>
+							{match_4_kda} <br>
+							({match_4_kda_percentage} kda)
+						</div>
+						<div class = "cs">
+							<div class = "title">
+								Total CS <br>
+							</div>
+							{match_4_cs} cs <br>
+							(분당 {match_4_cs_per_minuite}개)
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block3">
+						<div class = "team1">
+							<div class = "player1">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_4_player_1_champ}.png">
+								<div class = "name">
+									{match_4_player_1}
+								</div>
+							</div>
+							<div class = "player2">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_4_player_2_champ}.png">
+								<div class = "name">
+									{match_4_player_2}
+								</div>
+							</div>
+							<div class = "player3">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_4_player_3_champ}.png">
+								<div class = "name">
+									{match_4_player_3}
+								</div>
+							</div>
+							<div class = "player4">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_4_player_4_champ}.png">
+								<div class = "name">
+									{match_4_player_4}
+								</div>
+							</div>
+							<div class = "player5">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_4_player_5_champ}.png">
+								<div class = "name">
+									{match_4_player_5}
+								</div>
+							</div>
+						</div>
+						<div class = "team2">
+							<div class = "player6">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_4_player_6_champ}.png">
+								<div class = "name">
+									{match_4_player_6}
+								</div>
+							</div>
+							<div class = "player7">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_4_player_7_champ}.png">
+								<div class = "name">
+									{match_4_player_7}
+								</div>
+							</div>
+							<div class = "player8">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_4_player_8_champ}.png">
+								<div class = "name">
+									{match_4_player_8}
+								</div>
+							</div>
+							<div class = "player9">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_4_player_9_champ}.png">
+								<div class = "name">
+									{match_4_player_9}
+								</div>
+							</div>
+							<div class = "player10">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_4_player_10_champ}.png">
+								<div class = "name">
+									{match_4_player_10}
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block4">
+						<div class = "player_score">
+							LOLai<br> Score <br>
+						</div>
+						<div class = "lolai_score_letter">
+							{match_4_lolai_score_letter}
+						</div>
+					</div>
+
+					<div class = "block5">
+							<button class = "button" onclick = "location.href='{match4_page_link}';">
+								AI 매치분석<br>바로가기
+							</button>
+					</div>
+				</div>
+
+				<div class = "match_box" style = 'background-color: {match_5_box_color}'>
+					<div class = "block1">
+						{match_5_bool_win} <br> {match_5_length}
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block2">
+						<div class = "champ">
+							챔피언 <br>
+							<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_5_champ}.png">
+						</div>
+						<div class = "level">
+							<div class = "title">
+								LEVEL <br>
+							</div>
+							{match_5_level}
+						</div>
+						<div class = "kda">
+							<div class = "title">
+								KDA <br>
+							</div>
+							{match_5_kda} <br>
+							({match_5_kda_percentage} kda)
+						</div>
+						<div class = "cs">
+							<div class = "title">
+								Total CS <br>
+							</div>
+							{match_5_cs} cs <br>
+							(분당 {match_5_cs_per_minuite}개)
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block3">
+						<div class = "team1">
+							<div class = "player1">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_5_player_1_champ}.png">
+								<div class = "name">
+									{match_5_player_1}
+								</div>
+							</div>
+							<div class = "player2">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_5_player_2_champ}.png">
+								<div class = "name">
+									{match_5_player_2}
+								</div>
+							</div>
+							<div class = "player3">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_5_player_3_champ}.png">
+								<div class = "name">
+									{match_5_player_3}
+								</div>
+							</div>
+							<div class = "player4">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_5_player_4_champ}.png">
+								<div class = "name">
+									{match_5_player_4}
+								</div>
+							</div>
+							<div class = "player5">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_5_player_5_champ}.png">
+								<div class = "name">
+									{match_5_player_5}
+								</div>
+							</div>
+						</div>
+						<div class = "team2">
+							<div class = "player6">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_5_player_6_champ}.png">
+								<div class = "name">
+									{match_5_player_6}
+								</div>
+							</div>
+							<div class = "player7">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_5_player_7_champ}.png">
+								<div class = "name">
+									{match_5_player_7}
+								</div>
+							</div>
+							<div class = "player8">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_5_player_8_champ}.png">
+								<div class = "name">
+									{match_5_player_8}
+								</div>
+							</div>
+							<div class = "player9">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_5_player_9_champ}.png">
+								<div class = "name">
+									{match_5_player_9}
+								</div>
+							</div>
+							<div class = "player10">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\{match_5_player_10_champ}.png">
+								<div class = "name">
+									{match_5_player_10}
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block4">
+						<div class = "player_score">
+							LOLai<br> Score <br>
+						</div>
+						<div class = "lolai_score_letter">
+							{match_5_lolai_score_letter}
+						</div>
+					</div>
+
+					<div class = "block5">
+							<button class = "button" onclick = "location.href='{match5_page_link}';">
+								AI 매치분석<br>바로가기
+							</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- mid_right : ad_right_1, ad_right_2, ad_right_3 -->
+		<div class = "mid_right">
+			<div class = "ad_right_1">
+				ad_right_1
+			</div>
+			<div class = "ad_right_2">
+				ad_right_2
+			</div>
+			<div class = "ad_right_3">
+				ad_right_3
+			</div>
+		</div>
+	</div>
+	<!-- div bottom : ad_bottom_1 -->
+	<div class = "bottom">
+		<div class = "ad_bottom_1">
+		</div>
+	</div>
+
+
+<script type = "text/javascript">
+
+//Chart 1 - radar chart
+var chart_html = document.getElementById('radar-chart').getContext('2d');
+var myChart = new Chart(chart_html, {{
+	type: 'radar',
+	data: {{
+		labels: ["성장", "골드 획득", "생존", "전투", "오브젝트"],
+		datasets: [
+			{{
+				label: "{nickname}",
+				fill: true,
+				backgroundColor: "rgba(255,68,125,0.3)",
+				borderColor: "rgba(255,68,125,1)",
+				pointBorderColor: "#fff",
+				pointBackgroundColor: "rgba(245,37,37,0.7)",
+				data: [{radar_player_data_1},{radar_player_data_2},{radar_player_data_3},{radar_player_data_4},{radar_player_data_5}]
+			}},
+			{{
+				label: "티어 평균",
+				fill: true,
+				backgroundColor: "rgba(130,130,190,0.2)",
+				borderColor: "rgba(130,130,190,0.7)",
+				pointBorderColor: "#fff",
+				pointBackgroundColor: "rgba(179,181,198,1)",
+				data: [{radar_tier_avg_data_1},{radar_tier_avg_data_2},{radar_tier_avg_data_3},{radar_tier_avg_data_4},{radar_tier_avg_data_5}]
+			}}
+		]
+	}},
+	options: {{
+		labels:{{
+			font: {{
+				color: "red"
+			}}
+		}},
+		scales: {{
+			r:{{
+				angleLines:{{
+					display:true,
+					color:"rgba(160,160,160,1)"
+				}},
+				pointLabels:{{
+					color: "black",
+					font:{{
+						size: 13,
+						weight: "bold"
+					}}
+				}},
+				suggestedMin: 0,
+				suggestedMax: 100,
+				grid:{{
+					color: "rgba(130,130,130,0.8)"
+				}}
+			}}
+		}},
+		plugins:{{
+			legend: {{
+				labels: {{
+					boxWidth: 3
+				}}
+			}},
+			title: {{
+				display: true,
+				text: '{nickname} 님의 분석 결과',
+				color: "black",
+				font: {{
+					size: 15
+				}}
+			}}
+		}}
+	}}
+}});
+
+//Chart 2 - polar area chart - positive
+var chart_polar_positive = document.getElementById('polar-chart-positive').getContext('2d');
+var myChart3 = new Chart(chart_polar_positive, {{
+	type: 'polarArea',
+	data: {{
+		labels: [
+			'{positive_factor_label_1}',
+			'{positive_factor_label_2}',
+			'{positive_factor_label_3}',
+			'{positive_factor_label_4}',
+			'{positive_factor_label_5}'
+		],
+		datasets: [{{
+			label: 'My First Dataset',
+			data: [{positive_factor_data_1}, {positive_factor_data_2}, {positive_factor_data_3}, {positive_factor_data_4}, {positive_factor_data_5}],
+			backgroundColor: [
+				'rgb(255, 99, 132)',
+				'rgb(75, 192, 192)',
+				'rgb(255, 205, 86)',
+				'rgb(201, 203, 207)',
+				'rgb(54, 162, 235)'
+			]
+		}}]
+	}},
+	options:{{
+		scales: {{
+			r:{{
+				angleLines:{{
+					display:true,
+					color:"rgba(160,160,160,1)"
+				}},
+				suggestedMin: 0,
+				suggestedMax: 100,
+				grid:{{
+					color: "rgba(130,130,130,0.8)"
+				}}
+			}}
+		}},
+	}}
+}});
+
+//Chart 3 - polar area chart - negative
+var chart_polar_negative = document.getElementById('polar-chart-negative').getContext('2d');
+var myChart3 = new Chart(chart_polar_negative, {{
+	type: 'polarArea',
+	data: {{
+		labels: [
+			'{negative_factor_label_1}',
+			'{negative_factor_label_2}',
+			'{negative_factor_label_3}',
+			'{negative_factor_label_4}',
+			'{negative_factor_label_5}'
+		],
+		datasets: [{{
+			label: 'My First Dataset',
+			data: [{negative_factor_data_1}, {negative_factor_data_2}, {negative_factor_data_3}, {negative_factor_data_4}, {negative_factor_data_5}],
+			backgroundColor: [
+				'rgb(255, 99, 132)',
+				'rgb(75, 192, 192)',
+				'rgb(255, 205, 86)',
+				'rgb(201, 203, 207)',
+				'rgb(54, 162, 235)'
+			]
+		}}]
+	}},
+	options:{{
+		scales: {{
+			r:{{
+				angleLines:{{
+					display:true,
+					color:"rgba(160,160,160,1)"
+				}},
+				suggestedMin: 0,
+				suggestedMax: 100,
+				grid:{{
+					color: "rgba(130,130,130,0.8)"
+				}}
+			}}
+		}},
+	}}
+}});
+
+// //chart 4 - Bar chart - LOlai score comparison
+// var chart_bar_comparison = document.getElementById('bar-chart-comparison').getContext('2d');
+//
+// var myChart4 = new Chart(chart_bar_comparison, {{
+// 	type: 'bar',
+// 	data : {{
+// 		labels: ["{nickname}","아이언 리그 평균","동일 리그 평균","챌린저 리그 평균"],
+// 		datasets: [{{
+// 			label: '{nickname}',
+// 			data: [{lolai_score_number}, {iron_lolai_score}, {my_league_lolai_score}, {challenger_lolai_score}],
+// 			backgroundColor: [
+// 				'rgba(255, 99, 132, 0.2)',
+// 				'rgba(255, 159, 64, 0.2)',
+// 				'rgba(255, 205, 86, 0.2)',
+// 				'rgba(75, 192, 192, 0.2)',
+// 				'rgba(54, 162, 235, 0.2)',
+// 				'rgba(153, 102, 255, 0.2)',
+// 				'rgba(201, 203, 207, 0.2)'
+// 			],
+// 			borderColor: [
+// 				'rgb(255, 99, 132)',
+// 				'rgb(255, 159, 64)',
+// 				'rgb(255, 205, 86)',
+// 				'rgb(75, 192, 192)',
+// 				'rgb(54, 162, 235)',
+// 				'rgb(153, 102, 255)',
+// 				'rgb(201, 203, 207)'
+// 			],
+// 			borderWidth: 1
+// 		}}]
+// 	}},
+// 	options:{{
+// 		scales:{{
+// 			y: {{
+// 				beginAtZero: true
+// 			}}
+// 		}}
+// 	}}
+// }});
+
+
+//chart 5 - Line chart - LOlai score
+var chart_line = document.getElementById('chart_line').getContext('2d');
+
+var myChart5 = new Chart(chart_line, {{
+	type: 'line',
+	data : {{
+		labels:  ["{lolai_score_history_1_date}","{lolai_score_history_2_date}","{lolai_score_history_3_date}","{lolai_score_history_4_date}","{lolai_score_history_5_date}","{lolai_score_history_6_date}","{lolai_score_history_7_date}"],
+		datasets: [{{
+			label: '{nickname}',
+			data: [{lolai_score_history_1}, {lolai_score_history_2}, {lolai_score_history_3}, {lolai_score_history_4}, {lolai_score_history_5}, {lolai_score_history_6}, {lolai_score_history_7}],
+			fill: false,
+			borderColor: 'rgb(75, 192, 192)',
+			tension: 0.1
+		}}]
+	}},
+	options:{{
+	}}
+}});
+
+</script>
+</body>
+
+<footer>
+	<p>
+		LOLai.net isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+	</p>
+</footer>
+
+</html>

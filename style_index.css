@@ -1,0 +1,114 @@
+*{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 20px;
+	list-style: none;
+	text-decoration: none;
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+	color: #000;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	background-color : #EDEDED;
+}
+
+.box{
+	/*background-color: blue;*/
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	margin: -150px 0 0 -250px;
+}
+
+.box > .searchBox{
+	width: 100%;
+	height: 33px;
+	position: relative;
+	float: right;
+}
+
+.box > .searchBox > form{
+
+}
+
+.box > .searchBox  > form > .part1{
+
+}
+
+.box > .searchBox  > form > .part1 > .searchbox_img{
+	position: absolute;
+	width: 100%;
+	height: 33px;
+	float: left;
+}
+
+.box > .searchBox  > form > .part1 > input{
+	position: relative;
+	float: left;
+	border: none;
+	background-color: transparent;
+	width: 90%;
+	top: 6px;
+	left: 7px;
+	font-size: 14px;
+}
+
+.box > .searchBox  > form > .part1 > input:focus{
+	outline: none;
+}
+
+.box > .searchBox  > form > .part2{
+
+}
+
+.box > .searchBox  > form > .part2 > input{
+	position: relative;
+	float: right;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	width: 45px;
+	height: 30px;
+	z-index: 2;
+}
+
+footer{
+	width: 400px;
+	height: 100px;
+	/*background:#6cf;*/
+
+	position: absolute;
+	left: 50%;
+	bottom: 0%;
+	margin: 0 0 0 -200px;
+}
+
+footer > p{
+	color:black;
+	font-size : 10px;
+}
+
+
+.adv {
+	width: 800px;
+	height: 200px;
+	background-color: white;
+
+	position: absolute;
+	left: 50%;
+	bottom: 25%;
+	margin: 0 0 0 -400px;
+}
+
+
+
+img[src$=".gif"], img[src$=".png"] {
+image-rendering: -moz-crisp-edges; /* Firefox */
+image-rendering: -o-crisp-edges; /* Opera */
+image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+image-rendering: crisp-edges;
+-ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}

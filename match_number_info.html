@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang = "ko">
+
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdn.rawgit.com/theus/chart.css/v1.0.0/dist/chart.css" />
+
+	<link rel = "stylesheet" type = "text/css" href = "style_match_number_info.css">
+	<title> 롤분석은 롤파고! </title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<div class = "boxAll">
+		<div class = "box1">
+			<div class = logoBox>
+				<img src="logo_3.png" width="300">
+			</div>
+
+			<div class = "searchBox">
+				<form action = "py\q_w.py" method = "post">
+					<div class = "div1">
+						<img src="search_box.png" class="searchbox_img"/>
+						<input type = "search" name = "nickname" placeholder="분석할 소환사 이름을 입력해주세요!" autocomplete="off">
+					</div>
+					<div class = "div2">
+						<input type="submit" value = "">
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class = "box2">
+			<div class = "adBox1">
+				{AD1_h}
+			</div>
+
+			<div class = "box2_2">
+				<div class = "general_info_box" style = "background-image: url(dragontail-11.23.1/img/champion/splash/YONE_1.jpg);
+				background-size : cover;">
+				{champion_name} <br>
+				{duration_m}분 {duration_s}초<br>
+				{kda} ({kda_c} KDA)<br>
+				총 CS : {cs}개<br>
+				분당 CS : {cs_p}<br>
+				{win}<br>
+			</div>
+
+			<div class = "analysis_box">
+				<div class = "title">
+					<br>
+					LOLPAGO REPORT <br>
+				</div>
+				<br>
+				<br>
+				안녕하세요, 해당 매치 인공지능 롤 리포트를 담당하게 된 LOLPAGO BETA입니다. <br>
+				만나서 반갑습니다. 그럼 이번 매치에 대해 자세히 알아볼까요?
+				<br>
+				<br>
+
+				<div class = "score_box">
+					{grade}
+				</div>
+				<div class = "score_box_explanation">
+					{grade_comment}
+					<br>
+					<br>
+				</div>
+				<div class = "explanation_box">
+					<br>
+					<br>
+					롤파고 맞춤 인공지능 롤 리포트는 약 30개가 넘는 요인들 중 '어떤 요인들이 해당매치 승/패에 가장 큰 영향을 주었는가?'에 대한 분석에 초점이 맞춰져 있습니다.
+					또한, 해당 요인들을 유저 티어 평균, 최고/최저 티어 평균과 비교함으로써, 해당 유저가 해당 요인들을 유지/개선하였을 경우에 대한 결과값을 예측합니다.
+					<br>
+					<br>
+
+					<div class = "general_analysis">
+						해당 매치에서의 플레이어님의 플레이는 다음 티어와 흡사합니다.<br>
+						<img src="tier_emblem.png" width="300" class = "tier_emblem_img">
+						<br>
+						{tier_esti_name}
+						<br>
+						<br>
+					</div>
+					<div class ="positive_factors">
+						이번 게임에서 플레이어님의 장점이 돋보인 부분은 다음과 같습니다.
+						<div class = "positive_factor_1">
+							<div class = "player_chart">
+								<div class = "chart_box">
+									<div class = "chart_title">
+										<br>
+										{positive_factor_1}
+									</div>
+									<div class = "chart_title_explanation">
+										해당 요소가 플레이어님의 승리에 기여하는 정도 : {p_f_1_victory}% <br>
+									</div>
+									<div class="charts">
+										<span>챌린저평균</span>
+										<div class="charts__chart chart--p{p_f_1_chall} chart--yellow" data-percent></div>
+										<span>플레이어님</span>
+										<div class="charts__chart chart--p{p_f_1_user} chart--blue" data-percent></div>
+										<span>해당 티어 평균</span>
+										<div class="charts__chart chart--p{p_f_1_avg} chart--green" data-percent></div>
+										<span>아이언 티어 평균</span>
+										<div class="charts__chart chart--p{p_f_1_iron} chart--red" data-percent></div>
+									</div>
+								</div>
+							</div>
+							{p_f_1_explain}
+							<br>
+						</div>
+
+						<div class = "positive_factor_2">
+							<div class = "player_chart">
+								<div class = "chart_box">
+									<div class = "chart_title">
+										<br>
+										{positive_factor_2}
+									</div>
+									<div class = "chart_title_explanation">
+										해당 요소가 플레이어님의 승리에 기여하는 정도 : {p_f_2_victory}% <br>
+									</div>
+									<div class="charts">
+										<span>챌린저평균</span>
+										<div class="charts__chart chart--p{p_f_2_chall} chart--yellow" data-percent></div>
+										<span>플레이어님</span>
+										<div class="charts__chart chart--p{p_f_2_user} chart--blue" data-percent></div>
+										<span>해당 티어 평균</span>
+										<div class="charts__chart chart--p{p_f_2_avg} chart--green" data-percent></div>
+										<span>아이언 티어 평균</span>
+										<div class="charts__chart chart--p{p_f_2_iron} chart--red" data-percent></div>
+									</div>
+								</div>
+							</div>
+							{p_f_2_explain}
+							<br>
+						</div>
+
+						<div class = "positive_factor_3">
+							<div class = "player_chart">
+								<div class = "chart_box">
+									<div class = "chart_title">
+										<br>
+										{positive_factor_3}
+									</div>
+									<div class = "chart_title_explanation">
+										해당 요소가 플레이어님의 승리에 기여하는 정도 : {p_f_3_victory}% <br>
+									</div>
+									<div class="charts">
+										<span>챌린저평균</span>
+										<div class="charts__chart chart--p{p_f_3_chall} chart--yellow" data-percent></div>
+										<span>플레이어님</span>
+										<div class="charts__chart chart--p{p_f_3_user} chart--blue" data-percent></div>
+										<span>해당 티어 평균</span>
+										<div class="charts__chart chart--p{p_f_3_avg} chart--green" data-percent></div>
+										<span>아이언 티어 평균</span>
+										<div class="charts__chart chart--p{p_f_3_iron} chart--red" data-percent></div>
+									</div>
+								</div>
+							</div>
+							{p_f_3_explain}
+							<br>
+						</div>
+
+					</div>
+
+					<div class ="negative_factors">
+						하지만, 이런 부분은 개선이 필요합니다.
+						<div class = "negative_factor_1">
+							<div class = "player_chart">
+								<div class = "chart_box">
+									<div class = "chart_title">
+										<br>
+										{negative_factor_1}
+									</div>
+									<div class = "chart_title_explanation">
+										해당 요소가 플레이어님의 승리에 기여하는 정도 : {n_f_1_victory}% <br>
+									</div>
+									<div class="charts">
+										<span>챌린저평균</span>
+										<div class="charts__chart chart--p{n_f_1_chall} chart--yellow" data-percent></div>
+										<span>플레이어님</span>
+										<div class="charts__chart chart--p{n_f_1_user} chart--blue" data-percent></div>
+										<span>해당 티어 평균</span>
+										<div class="charts__chart chart--p{n_f_1_avg} chart--green" data-percent></div>
+										<span>아이언 티어 평균</span>
+										<div class="charts__chart chart--p{n_f_1_iron} chart--red" data-percent></div>
+									</div>
+								</div>
+							</div>
+							{n_f_1_explain}
+							<br>
+						</div>
+						<div class = "negative_factor_2">
+							<div class = "player_chart">
+								<div class = "chart_box">
+									<div class = "chart_title">
+										<br>
+										{negative_factor_2}
+									</div>
+									<div class = "chart_title_explanation">
+										해당 요소가 플레이어님의 승리에 기여하는 정도 : {n_f_2_victory}% <br>
+									</div>
+									<div class="charts">
+										<span>챌린저평균</span>
+										<div class="charts__chart chart--p{n_f_2_chall} chart--yellow" data-percent></div>
+										<span>플레이어님</span>
+										<div class="charts__chart chart--p{n_f_2_user} chart--blue" data-percent></div>
+										<span>해당 티어 평균</span>
+										<div class="charts__chart chart--p{n_f_2_avg} chart--green" data-percent></div>
+										<span>아이언 티어 평균</span>
+										<div class="charts__chart chart--p{n_f_2_iron} chart--red" data-percent></div>
+									</div>
+								</div>
+							</div>
+							{n_f_2_explain}
+							<br>
+						</div>
+						<div class = "negative_factor_3">
+							<div class = "player_chart">
+								<div class = "chart_box">
+									<div class = "chart_title">
+										<br>
+										{negative_factor_3}
+									</div>
+									<div class = "chart_title_explanation">
+										해당 요소가 플레이어님의 승리에 기여하는 정도 : {n_f_3_victory}% <br>
+										어쩌고 저쩌고 저쩌고
+									</div>
+									<div class="charts">
+										<span>챌린저평균</span>
+										<div class="charts__chart chart--p{n_f_3_chall} chart--yellow" data-percent></div>
+										<span>플레이어님</span>
+										<div class="charts__chart chart--p{n_f_3_user} chart--blue" data-percent></div>
+										<span>해당 티어 평균</span>
+										<div class="charts__chart chart--p{n_f_3_avg} chart--green" data-percent></div>
+										<span>아이언 티어 평균</span>
+										<div class="charts__chart chart--p{n_f_3_iron} chart--red" data-percent></div>
+									</div>
+								</div>
+							</div>
+							{n_f_3_explain}
+							<br>
+						</div>
+
+					</div>
+
+					<div class = "conclusion">
+						해당 매치 분석 기준, <br> {promotion_statement} ({promotion_rate}%) <br>
+						만약 부정적 요인들을 평균 수치 이상으로 개선한다면, 다음 티어로 승급할 확률은 {promotion_fixed_rate}% 이상으로 예상됩니다. <br>
+						<br>
+						여기까지 LOLPAGO BETA였습니다. 다음 리포트에서 뵐게요!
+					</div>
+					<div class = "end">
+						<br>
+						해당 분석결과는 모든 티어(아이언~챌린저)의 실제 매치 데이터들을 기반으로 학습된 머신러닝 AI를 통해 분석 및 예측되었습니다.
+						<br>예측 정확도와 신빙성은 League of Legends의 패치 버전 혹은 개인에 따라 상이할수 있습니다.
+						<br> 꾸준한 개선을 통해, 보다 정확한 인공지능 리포트를 위해 힘쓰겠습니다.
+						<br> 감사합니다.
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class = "adBox2">
+			{AD2_h}
+		</div>
+	</div>
+</div>
+</div>
+</body>
+
+<footer>
+	<p>
+		LOLPAGO isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+	</p>
+</footer>
+</html>

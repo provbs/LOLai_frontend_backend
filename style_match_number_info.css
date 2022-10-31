@@ -1,0 +1,376 @@
+*{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 12px;
+	list-style: none;
+	text-decoration: none;
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+	color: #000;
+}
+
+body{
+	background-color: #1D1D1D;
+}
+
+.boxAll{
+	position:relative;
+	left: 50%;
+	margin: 0 0 0 -425px;
+}
+
+.box1{
+		/*박스 1의 크기는 searchBox + 사이마진 + logoBox 이다*/
+		width:  850px;
+		height: 100px;
+		position: relative;
+		margin-top: 50px;
+}
+
+.logoBox{
+	float : left;
+	margin-right: 198px;
+}
+
+.searchBox{
+	width: 350px;
+	height : 50px;
+	/*background-image: url("search_box.png");*/
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+}
+
+.searchBox > form > .div1 > .searchbox_img{
+	width:350px;
+	height: 50px;
+	position: absolute;
+	left: 0px;
+}
+
+.searchBox > form > .div1{
+	position: relative;
+	margin-top: 15px;
+}
+.searchBox > form > .div2{
+	position: relative;
+	margin-top: 15px;
+}
+
+.searchBox > form{
+	display: flex;
+	padding-top: 3px;
+}
+.searchBox > form > .div1 > input{
+	width: 300px;
+	height: 30px;
+	font-size: 17px;
+	color: #1D1D1D;
+	border: none;
+	background: transparent;
+	padding-left: 8px;
+	position: relative;
+	text-shadow: none;
+}
+
+.searchBox > form > .div1 > input::placeholder{
+	color: grey;
+	text-shadow: none;
+}
+
+.searchBox > form > .div1 > input:focus{
+	outline: none;
+}
+
+.searchBox > form > .div2 > input{
+	width: 43px;
+	height: 25px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	border: none;
+	border-width: 0px;
+	box-shadow: none;
+	outline : none;
+	background-color: transparent;
+	position: relative;
+	top: 3px;
+	z-index: 2;
+}
+
+
+.box2{
+	position: relative;
+	top: 20px;
+
+	/*박스 2의 크기는 box 1과 width + 양측 ad box + 중간 마진들 의 합이다*/
+	/* 여기서 마진은 50px 씩 양쪽으로 있다. */
+	width:  1350px;
+	height: 3500px;
+	right: 250px;
+}
+
+.box2 > .box2_2{
+	width: 850px;
+	height: 3500px;
+	position: relative;
+	left: 50px;
+	float : left;
+	background-color: green;
+}
+
+.box2 > .box2_2 > .general_info_box{
+	width: 850px;
+	height: 400px;
+	font-size: 17px;
+}
+
+.box2 > .box2_2 > .analysis_box{
+	background-color: orange;
+	font-size: 13px;
+}
+
+.box2 > .box2_2 > .analysis_box > .title{
+	background-color: orange;
+	text-align: center;
+	font-size: 25px;
+}
+
+.box2 > .box2_2 > .analysis_box > .score_box{
+	background-color: blue;
+	text-align: center;
+	color: white;
+	font-size: 50px;
+}
+
+.box2 > .box2_2 > .analysis_box > .score_box_explanation{
+	background-color: blue;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box{
+	background-color: green;
+	font-size: 13px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .general_analysis{
+	background-color: skyblue;
+	font-size: 13px;
+	text-align: center;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .general_analysis > .tier_emblem_img{
+	width: 150px;
+	height: auto;
+}
+
+	/* POSITIVE FACTOR */
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors{
+	background-color: brown;
+	font-size: 14px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_1{
+	background-color: orange;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_1 > .player_chart > .chart_box > .chart_title{
+	/*background-color: blue;*/
+	font-size : 23px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_1 > .player_chart > .chart_box > .chart_title_explanation{
+	/*background-color: green;*/
+	font-size : 14px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_1 > .player_chart > .chart_box > .charts{
+	/*background-color: yellow;*/
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_1 > .player_chart > .chart_box > .charts > span{
+	background-color: brown;
+	font-size : 14px;
+}
+
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_2{
+	background-color: orange;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_2 > .player_chart > .chart_box > .chart_title{
+	/*background-color: blue;*/
+	font-size : 23px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_2 > .player_chart > .chart_box > .chart_title_explanation{
+	/*background-color: green;*/
+	font-size : 14px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_2 > .player_chart > .chart_box > .charts{
+	/*background-color: yellow;*/
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_2 > .player_chart > .chart_box > .charts > span{
+	background-color: brown;
+	font-size : 14px;
+}
+
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_3{
+	background-color: orange;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_3 > .player_chart > .chart_box > .chart_title{
+	/*background-color: blue;*/
+	font-size : 23px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_3 > .player_chart > .chart_box > .chart_title_explanation{
+	/*background-color: green;*/
+	font-size : 14px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_3 > .player_chart > .chart_box > .charts{
+	/*background-color: yellow;*/
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .positive_factors > .positive_factor_3 > .player_chart > .chart_box > .charts > span{
+	background-color: brown;
+	font-size : 14px;
+}
+
+
+/* NEGATIVE FACTORS */
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors{
+	background-color: brown;
+	font-size: 14px;
+}
+
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_1{
+	background-color: orange;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_1 > .player_chart > .chart_box > .chart_title{
+	/*background-color: blue;*/
+	font-size : 23px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_1 > .player_chart > .chart_box > .chart_title_explanation{
+	/*background-color: green;*/
+	font-size : 14px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_1 > .player_chart > .chart_box > .charts{
+	/*background-color: yellow;*/
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_1 > .player_chart > .chart_box > .charts > span{
+	background-color: brown;
+	font-size : 14px;
+}
+
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_2{
+	background-color: orange;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_2 > .player_chart > .chart_box > .chart_title{
+	/*background-color: blue;*/
+	font-size : 23px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_2 > .player_chart > .chart_box > .chart_title_explanation{
+	/*background-color: green;*/
+	font-size : 14px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_2 > .player_chart > .chart_box > .charts{
+	/*background-color: yellow;*/
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_2 > .player_chart > .chart_box > .charts > span{
+	background-color: brown;
+	font-size : 14px;
+}
+
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_3{
+	background-color: orange;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_3 > .player_chart > .chart_box > .chart_title{
+	/*background-color: blue;*/
+	font-size : 23px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_3 > .player_chart > .chart_box > .chart_title_explanation{
+	/*background-color: green;*/
+	font-size : 14px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_3 > .player_chart > .chart_box > .charts{
+	/*background-color: yellow;*/
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .negative_factors > .negative_factor_3 > .player_chart > .chart_box > .charts > span{
+	background-color: brown;
+	font-size : 14px;
+}
+
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .conclusion{
+	background-color: skyblue;
+	font-size : 15px;
+}
+
+.box2 > .box2_2 > .analysis_box > .explanation_box > .end{
+	background-color: skyblue;
+	font-size : 15px;
+}
+
+	/* ADS */
+.adBox1{
+	width: 200px;
+	height: 700px;
+	background-color: white;
+	position: relative;
+	float : left;
+
+}
+
+.adBox2{
+	width: 200px;
+	height: 700px;
+	background-color: skyblue;
+	position: relative;
+	float : right;
+
+}
+
+footer{
+	width: 400px;
+	height: 100px;
+
+	position: relative;
+	left: 50%;
+	margin: 0 0 0 -200px;
+	top : 100px;
+}
+
+footer > p{
+	color:white;
+	font-size : 10px;
+}
+
+
+img[src$=".gif"], img[src$=".png"] {
+image-rendering: -moz-crisp-edges; /* Firefox */
+image-rendering: -o-crisp-edges; /* Opera */
+image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+image-rendering: crisp-edges;
+-ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}

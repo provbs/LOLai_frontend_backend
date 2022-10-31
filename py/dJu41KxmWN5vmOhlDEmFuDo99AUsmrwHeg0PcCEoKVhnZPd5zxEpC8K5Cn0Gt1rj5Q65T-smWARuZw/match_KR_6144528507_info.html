@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang = "ko">
+
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdn.rawgit.com/theus/chart.css/v1.0.0/dist/chart.css" />
+
+	<link rel = "stylesheet" type = "text/css" href = "../../style_match_info_renewal.css">
+
+	<meta charset="utf-8">
+	<title> 인공지능 롤 리포트 - LOLai.net </title>
+</head>
+
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js">
+	</script>
+	<!-- div top : 타이틀, 검색바 -->
+	<div class = "top">
+		<div class = "top_box">
+			<div class = "title_logo">
+				<img src="../../lolai_logo.png" width="559px" height = "122px">
+			</div>
+
+			<div class = "search_box">
+				<form action = "../../py\q_w.py?update=False" method = "post">
+
+					<div class = "part1">
+						<img src="../../search_box.png" class="searchbox_img"/>
+						<input type = "search" name = "nickname" placeholder="분석할 소환사 이름을 입력해주세요." autocomplete="off">
+					</div>
+
+					<div class = "part2">
+						<input type="submit" value = "">
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class = "mid">
+		<!-- mid_left : ad_left_1, ad_left_2, ad_left_3 -->
+		<div class = "mid_left">
+			<div class = "ad_left_1">
+				ad_left_1
+			</div>
+			<div class = "ad_left_2">
+				ad_left_2
+			</div>
+			<div class = "ad_left_3">
+				ad_left_3
+			</div>
+		</div>
+
+		<!-- mid_middle : 플레이어 정보 박스, 종합분석결과 박스, 전적 박스 -->
+		<div class = "mid_middle">
+			<div class = "m_m_box1">
+				<!-- 플레이어 정보 박스 :
+				, top - name, update_button, update_info
+				, middle - tier_image, tier_info, lolai_score, recent_match_info
+				, bottom - comment-->
+				<div class = "m_m_box1_top">
+					<div class = "m_m_b1_t_top">
+						<div class = "name">
+							Hide on bush
+						</div>
+						<div class = "update_button">
+							<input type = "button" class = "update_btn" value = "업데이트" onclick = "location.href='../../py/q_w.py?nickname=Hide on bush&update=True';">
+						</div>
+						<div class = "update_info">
+							2022/10/15일에 마지막으로 갱신하였습니다.
+						</div>
+					</div>
+						<div class = "line">
+							<img src="../../line.png">
+						</div>
+				</div>
+
+				<div class = "m_m_box1_mid">
+					<div class = "tier_box1">
+						<div class = "tier_image">
+							<img src = "../../ranked_emblems/Emblem_GRANDMASTER.png">
+						</div>
+						<div class = "tier_info">
+							<div class = "rank_type">
+								5 X 5 솔로랭크
+							</div>
+							<div class = "tier_title">
+								GRANDMASTER I <br> 595LP
+							</div>
+							<div class = "match_numbers">
+								989 경기 524승 465패 <br> (승률 53.0%)
+							</div>
+						</div>
+					</div>
+
+					<div class = "lolai_score">
+						<div class = "lolai_score_title">
+							LOLai Score
+						</div>
+						<div class = "lolai_score_letter">
+							SSS
+						</div>
+						<div class = "lolai_score_number">
+							10333
+						</div>
+					</div>
+					<div class = "recent_match_info">
+						<div class = "match_info_title">
+							최근 랭크매치 전적
+						</div>
+						<div class = "match_info_history">
+							승승승패패
+						</div>
+						<div class = "match_info_rate">
+							(승률 60.0%)
+						</div>
+					</div>
+				</div>
+
+				<div class = "m_m_box1_bot">
+					<div class = "line">
+						<img src="../../line.png">
+					</div>
+					<div class = "comment">
+						LOLai Score는 해당 유저의 최근 10게임에 대한 인공지능 LOLai의 분석점수 입니다.
+					</div>
+				</div>
+
+			</div>
+
+			<div class = "match_info_box">
+				<div class = "match_box" style = 'background-color: #FFCCCC'>
+					<div class = "block1">
+						패배 <br> 21분 43초
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block2">
+						<div class = "champ">
+							챔피언 <br>
+							<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Sylas.png">
+						</div>
+						<div class = "level">
+							<div class = "title">
+								LEVEL <br>
+							</div>
+							12
+						</div>
+						<div class = "kda">
+							<div class = "title">
+								KDA <br>
+							</div>
+							2/5/3 <br>
+							(1.0 kda)
+						</div>
+						<div class = "cs">
+							<div class = "title">
+								Total CS <br>
+							</div>
+							170 cs <br>
+							(분당 7.83개)
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block3">
+						<div class = "team1">
+							<div class = "player1">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Gragas.png">
+								<div class = "name">
+									하건펭수
+								</div>
+							</div>
+							<div class = "player2">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Vi.png">
+								<div class = "name">
+									원나물
+								</div>
+							</div>
+							<div class = "player3">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Ahri.png">
+								<div class = "name">
+									미북이
+								</div>
+							</div>
+							<div class = "player4">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Yasuo.png">
+								<div class = "name">
+									아임 쏘리
+								</div>
+							</div>
+							<div class = "player5">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Sett.png">
+								<div class = "name">
+									참새크면비둘기
+								</div>
+							</div>
+						</div>
+						<div class = "team2">
+							<div class = "player6">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Aatrox.png">
+								<div class = "name">
+									스        know맨
+								</div>
+							</div>
+							<div class = "player7">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Taliyah.png">
+								<div class = "name">
+									221124
+								</div>
+							</div>
+							<div class = "player8">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Sylas.png">
+								<div class = "name">
+									Hide on bush
+								</div>
+							</div>
+							<div class = "player9">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Kaisa.png">
+								<div class = "name">
+									BRO Hena
+								</div>
+							</div>
+							<div class = "player10">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Rell.png">
+								<div class = "name">
+									정훈이의 모험
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block4">
+						<div class = "player_score">
+							LOLai<br> Score <br>
+						</div>
+						<div class = "lolai_score_letter">
+							SSS
+						</div>
+					</div>
+
+					<div class = "block5">
+							<button class = "button">
+								해당 매치<br>분석 중
+							</button>
+					</div>
+				</div>
+			</div>
+
+			<div class = "transition_box">
+				<div class = "icon">
+					<img src = "../../arrow_down1.png">
+				</div>
+				<div class = "comment">
+					상세 분석 리포트 만드는 중... 완료!
+				</div>
+			</div>
+
+			<div class = "m_m_box2">
+				<!-- 매치 상세 분석결과 박스 :
+				, title_box - title, line, comment
+				, middle_1 - lolai Score
+				, middle_2 - expect tier
+				, game_info - graphs of the match information (if possible)
+				, middle_3 - positive factors
+				, middle_4 - negative factors
+				, bottom_box - conclusion
+				, comment -->
+				<div class = "title_box">
+					<div class = "name">
+						Hide on bush
+					</div>
+					<div class = "title">
+						님의 랭크게임 인공지능 매치분석 리포트 (1 게임)
+					</div>
+					<div class = "line">
+						<img src="../../line.png">
+					</div>
+					<div class = "comment">
+						Riot 공식 데이터베이스를 사용한 머신러닝 학습을 통해 분석된 결과입니다.
+						<br>
+						차트들의 레이블(요소)들을 눌러 제거하거나, 차트 위에 마우스를 올려 자세한 정보를 살펴보세요.
+					</div>
+				</div>
+
+				<div class = "middle_1">
+					<div class = "chart">
+						<canvas id="radar-chart"></canvas>
+					</div>
+					<div class = "lolai_score">
+						<div class = "title">
+							LOLai Score
+						</div>
+						<div class = "letter">
+							SSS
+						</div>
+						<div class = "score">
+							10333
+						</div>
+					</div>
+					<div class = "robot_img">
+						<img src = "../../robot.png">
+					</div>
+					<div class = "lolai_score_comment">
+						"흠...이 플레이는...설마 부캐?? ƪ(˘⌣˘)ʃ"
+					</div>
+					<div class = "chart0">
+						<canvas id = "bar-chart-comparison"> </canvas>
+						<div class = "comment">
+							팀내 순위는 2등, 전체 순위로는 2등입니다.<br>
+							LOLai점수는 매치 내 데이터 총합으로 분석된 결과이기 때문에, 승리와 밀접한 관계를 가지고 있습니다.
+						</div>
+					</div>
+				</div>
+
+				<div class = "game_info">
+					<div class = "line">
+						<img src="../../line.png">
+					</div>
+					<div class = "title">
+						시간대별 데이터들을 통해서, 이번 매치의 흐름을 알아볼까요?
+					</div>
+					<div class = "sub">
+						매치가 흐름에 따라 변화하는 유의미한 데이터들을 모아 보았습니다.
+					</div>
+					<div class = "chart2">
+						<canvas id = "chart_line_gold"> </canvas>
+						<div class = "comment">
+							해당 그래프에서는 Hide on bush님의 분당 골드 획득량을 아군팀의 평균 분당 골드 획득량 혹은 적팀의 평균 골드 획득량과 비교해 볼 수 있습니다. <br>
+							<!-- goldchart_comment -->
+							<!--gamelength*1/5 에서 Hide on bush님의 골드 획득량은 적팀 평균에 비해 무려 gold% 차이가 났습니다.-->
+						</div>
+					</div>
+					<div class = "chart1">
+						<canvas id = "chart_line_etc"> </canvas>
+						<div class = "comment">
+							게임 시간에 따른 Hide on bush님이 상대 챔피언에게 가한 물리/마법/트루 데미지들의 합입니다. <br>
+							Hide on bush님의 데미지 그래프를 상대팀과 아군팀의 평균과 비교해보세요.
+						</div>
+					</div>
+					<div class = "chart3">
+						<canvas id = "chart_line_etc2"> </canvas>
+						<div class = "comment">
+							게임 길이 별 Hide on bush님의 레벨 및 CS 그래프입니다. 레벨과 CS는 플레이어의 성장력과 높은 연관성을 가지고 있습니다.
+							<br> 그래프에서 정체된 구간이 있지는 않은지 확인해보세요.
+						</div>
+					</div>
+				</div>
+
+				<div class = "middle_2">
+					<div class = "title">
+						해당 매치에서의 Hide on bush님의 승리/패배에는 어떤 요소들이 가장 크게 작용하였을까요?
+					</div>
+					<div class = "charts">
+						<div class = "chart4">
+							<canvas id="polar-chart-positive"></canvas>
+						</div>
+						<div class = "chart5">
+							<canvas id="polar-chart-negative"></canvas>
+						</div>
+					</div>
+					<div class = "comment4">
+						긍정적 관여 요소
+					</div>
+					<div class = "comment5">
+						부정적 관여 요소
+					</div>
+				</div>
+
+				<div class = "middle_3">
+					긍정적 관여 요소들은 유지하도록, 부정적 관여 요소들은 최대한 개선하여야 합니다.<br><br>
+				</div>
+
+				<div class = "bottom_box">
+					<div class = "title">
+						<div class = "box1">
+							현재 게임의 승패에 미치는 영향은&nbsp
+						</div>
+						<div class = "positive">
+							긍정적 요인이 41.7%&nbsp
+						</div>
+						<div class = "negative">
+							부정적 요인이 6.0%
+						</div>
+						<div class = "box2">
+							입니다.
+						</div>
+					</div>
+					<div class = "comment">
+						부정적 요인들과 긍정적 요인들은 상대적 수치를 가지고 있습니다. 만일, 긍정적 요인보다 부정적 요인이 미치는 영향이 더 높다면, 부정적 요인을 개선함으로 더욱 큰 효과를 기대할 수 있습니다. 긍정적 요인이 부정적요인이 미치는 영향보다 높다면, 현재의 플레이의 부족함이 상대적으로 적으며, 부정적요인을 개선함으로 큰 효과를 기대하기는 힘들지만, 긍적적 요인들을 유지함으로 현재의 플레이 폼을 유지할 수 있습니다.
+					</div>
+					<div class = "ending">
+						<img src = "../../robot.png">
+						<div class = "comment">
+							"나를 알고, 상대를 알면 백전백승!" <br> Hide on bush님, 어떤 부분을 개선하면 승리에 가까워질지 감이 좀 오셨나요?
+						</div>
+					</div>
+					<div class = "line">
+						<img src="../../line.png">
+					</div>
+				</div>
+
+				<div class = "comment">
+					해당 분석 리포트는 아이언~챌린저의 실제 매치 데이터들을 기반으로 학습된 머신러닝 AI 프로그램을 통해 분석 및 작성되었습니다.<br>
+					분석 정확도는 League of Legends의 현재 패치 버전 및 개인에 따라 상이할 수 있습니다.<br>
+					LOLai.net은 꾸준한 개선을 통해 보다 정확한 인공지능 리포트를 위해 힘쓰겠습니다.
+				</div>
+
+			</div>
+
+
+
+			<div class = "m_m_box3">
+				<!-- 전적 박스 :
+				, matchbox - box1, box2, box3, box4, box5
+				5번 반복.-->
+				<div class = "match_box" style = 'background-color: #add0f7'>
+					<div class = "block1">
+						승리 <br> 26분 59초
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block2">
+						<div class = "champ">
+							챔피언 <br>
+							<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Kassadin.png">
+						</div>
+						<div class = "level">
+							<div class = "title">
+								LEVEL <br>
+							</div>
+							15
+						</div>
+						<div class = "kda">
+							<div class = "title">
+								KDA <br>
+							</div>
+							6/2/10 <br>
+							(8.0 kda)
+						</div>
+						<div class = "cs">
+							<div class = "title">
+								Total CS <br>
+							</div>
+							213 cs <br>
+							(분당 7.89개)
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block3">
+						<div class = "team1">
+							<div class = "player1">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Sett.png">
+								<div class = "name">
+									스        know맨
+								</div>
+							</div>
+							<div class = "player2">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Vi.png">
+								<div class = "name">
+									2CORINTHIANS
+								</div>
+							</div>
+							<div class = "player3">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Leblanc.png">
+								<div class = "name">
+									jkjkjkjkk
+								</div>
+							</div>
+							<div class = "player4">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Kaisa.png">
+								<div class = "name">
+									Gen G Peyz
+								</div>
+							</div>
+							<div class = "player5">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Renata.png">
+								<div class = "name">
+									역천괴
+								</div>
+							</div>
+						</div>
+						<div class = "team2">
+							<div class = "player6">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Aatrox.png">
+								<div class = "name">
+									d dayman 
+								</div>
+							</div>
+							<div class = "player7">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Poppy.png">
+								<div class = "name">
+									fragiIe
+								</div>
+							</div>
+							<div class = "player8">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Kassadin.png">
+								<div class = "name">
+									Hide on bush
+								</div>
+							</div>
+							<div class = "player9">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Samira.png">
+								<div class = "name">
+									pzxvp
+								</div>
+							</div>
+							<div class = "player10">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Nautilus.png">
+								<div class = "name">
+									한달안에챌까지
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block4">
+						<div class = "player_score">
+							LOLai<br> Score <br>
+						</div>
+						<div class = "lolai_score_letter">
+							A
+						</div>
+					</div>
+
+					<div class = "block5">
+						<button class = "button" onclick = "window.open('match_KR_6144669752_info.html');">
+							AI 매치분석<br>바로가기!
+						</button>
+					</div>
+				</div>
+
+				<div class = "match_box" style = 'background-color: #add0f7'>
+					<div class = "block1">
+						승리 <br> 21분 33초
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block2">
+						<div class = "champ">
+							챔피언 <br>
+							<img src = ../../dragontail-11.23.1\11.23.1\img\champion\Azir.png>
+						</div>
+						<div class = "level">
+							<div class = "title">
+								LEVEL <br>
+							</div>
+							15
+						</div>
+						<div class = "kda">
+							<div class = "title">
+								KDA <br>
+							</div>
+							5/3/4 <br>
+							(3.0 kda)
+						</div>
+						<div class = "cs">
+							<div class = "title">
+								Total CS <br>
+							</div>
+							201 cs <br>
+							(분당 9.33개)
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block3">
+						<div class = "team1">
+							<div class = "player1">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Aatrox.png">
+								<div class = "name">
+									d dayman 
+								</div>
+							</div>
+							<div class = "player2">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Lillia.png">
+								<div class = "name">
+									강주연
+								</div>
+							</div>
+							<div class = "player3">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Irelia.png">
+								<div class = "name">
+									Erilia
+								</div>
+							</div>
+							<div class = "player4">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\MissFortune.png">
+								<div class = "name">
+									T1 Gumayusi
+								</div>
+							</div>
+							<div class = "player5">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Yuumi.png">
+								<div class = "name">
+									역천괴
+								</div>
+							</div>
+						</div>
+						<div class = "team2">
+							<div class = "player6">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Sett.png">
+								<div class = "name">
+									스        know맨
+								</div>
+							</div>
+							<div class = "player7">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Belveth.png">
+								<div class = "name">
+									2CORINTHIANS
+								</div>
+							</div>
+							<div class = "player8">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Azir.png">
+								<div class = "name">
+									Hide on bush
+								</div>
+							</div>
+							<div class = "player9">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Tristana.png">
+								<div class = "name">
+									숟인데요
+								</div>
+							</div>
+							<div class = "player10">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Pyke.png">
+								<div class = "name">
+									peng you wan an
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block4">
+						<div class = "player_score">
+							LOLai<br> Score <br>
+						</div>
+						<div class = "lolai_score_letter">
+							A
+						</div>
+					</div>
+
+					<div class = "block5">
+						<button class = "button" onclick = "window.open('match_KR_6144608801_info.html');">
+							AI 매치분석<br>바로가기!
+						</button>
+					</div>
+				</div>
+
+				<div class = "match_box" style = 'background-color: #add0f7'>
+					<div class = "block1">
+						승리 <br> 29분 37초
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block2">
+						<div class = "champ">
+							챔피언 <br>
+							<img src = ../../dragontail-11.23.1\11.23.1\img\champion\Sylas.png>
+						</div>
+						<div class = "level">
+							<div class = "title">
+								LEVEL <br>
+							</div>
+							15
+						</div>
+						<div class = "kda">
+							<div class = "title">
+								KDA <br>
+							</div>
+							6/7/8 <br>
+							(2.0 kda)
+						</div>
+						<div class = "cs">
+							<div class = "title">
+								Total CS <br>
+							</div>
+							188 cs <br>
+							(분당 6.35개)
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block3">
+						<div class = "team1">
+							<div class = "player1">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\XinZhao.png">
+								<div class = "name">
+									애디도구른다
+								</div>
+							</div>
+							<div class = "player2">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Qiyana.png">
+								<div class = "name">
+									DK Sharvel
+								</div>
+							</div>
+							<div class = "player3">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Sylas.png">
+								<div class = "name">
+									Hide on bush
+								</div>
+							</div>
+							<div class = "player4">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Sivir.png">
+								<div class = "name">
+									T1 Gumayusi
+								</div>
+							</div>
+							<div class = "player5">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Shen.png">
+								<div class = "name">
+									참새크면비둘기
+								</div>
+							</div>
+						</div>
+						<div class = "team2">
+							<div class = "player6">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Pyke.png">
+								<div class = "name">
+									스        know맨
+								</div>
+							</div>
+							<div class = "player7">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Gragas.png">
+								<div class = "name">
+									강주연
+								</div>
+							</div>
+							<div class = "player8">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Irelia.png">
+								<div class = "name">
+									Erilia
+								</div>
+							</div>
+							<div class = "player9">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Kaisa.png">
+								<div class = "name">
+									BRO Hena
+								</div>
+							</div>
+							<div class = "player10">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Renekton.png">
+								<div class = "name">
+									갈과 배 음료
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block4">
+						<div class = "player_score">
+							LOLai<br> Score <br>
+						</div>
+						<div class = "lolai_score_letter">
+							A
+						</div>
+					</div>
+
+					<div class = "block5">
+						<button class = "button" onclick = "window.open('match_KR_6144645256_info.html');">
+							AI 매치분석<br>바로가기!
+						</button>
+					</div>
+				</div>
+
+				<div class = "match_box" style = 'background-color: #FFCCCC'>
+					<div class = "block1">
+						패배 <br> 22분 10초
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block2">
+						<div class = "champ">
+							챔피언 <br>
+							<img src = ../../dragontail-11.23.1\11.23.1\img\champion\Sylas.png>
+						</div>
+						<div class = "level">
+							<div class = "title">
+								LEVEL <br>
+							</div>
+							14
+						</div>
+						<div class = "kda">
+							<div class = "title">
+								KDA <br>
+							</div>
+							10/6/3 <br>
+							(2.2 kda)
+						</div>
+						<div class = "cs">
+							<div class = "title">
+								Total CS <br>
+							</div>
+							196 cs <br>
+							(분당 8.84개)
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block3">
+						<div class = "team1">
+							<div class = "player1">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Sett.png">
+								<div class = "name">
+									스        know맨
+								</div>
+							</div>
+							<div class = "player2">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Rammus.png">
+								<div class = "name">
+									dkdkdkdkk
+								</div>
+							</div>
+							<div class = "player3">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Akshan.png">
+								<div class = "name">
+									smmz
+								</div>
+							</div>
+							<div class = "player4">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\MissFortune.png">
+								<div class = "name">
+									겨울레몬
+								</div>
+							</div>
+							<div class = "player5">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Nautilus.png">
+								<div class = "name">
+									NS HH
+								</div>
+							</div>
+						</div>
+						<div class = "team2">
+							<div class = "player6">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Aatrox.png">
+								<div class = "name">
+									dlrj
+								</div>
+							</div>
+							<div class = "player7">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Viego.png">
+								<div class = "name">
+									겸글러
+								</div>
+							</div>
+							<div class = "player8">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Sylas.png">
+								<div class = "name">
+									Hide on bush
+								</div>
+							</div>
+							<div class = "player9">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Ezreal.png">
+								<div class = "name">
+									xia ge yue hao
+								</div>
+							</div>
+							<div class = "player10">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Yuumi.png">
+								<div class = "name">
+									참새크면비둘기
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block4">
+						<div class = "player_score">
+							LOLai<br> Score <br>
+						</div>
+						<div class = "lolai_score_letter">
+							A
+						</div>
+					</div>
+
+					<div class = "block5">
+						<button class = "button" onclick = "window.open('match_KR_6144602816_info.html');">
+							AI 매치분석<br>바로가기!
+						</button>
+					</div>
+				</div>
+
+				<div class = "match_box" style = 'background-color: #FFCCCC'>
+					<div class = "block1">
+						패배 <br> 21분 43초
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block2">
+						<div class = "champ">
+							챔피언 <br>
+							<img src = ../../dragontail-11.23.1\11.23.1\img\champion\Sylas.png>
+						</div>
+						<div class = "level">
+							<div class = "title">
+								LEVEL <br>
+							</div>
+							12
+						</div>
+						<div class = "kda">
+							<div class = "title">
+								KDA <br>
+							</div>
+							2/5/3 <br>
+							(1.0 kda)
+						</div>
+						<div class = "cs">
+							<div class = "title">
+								Total CS <br>
+							</div>
+							170 cs <br>
+							(분당 7.83개)
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block3">
+						<div class = "team1">
+							<div class = "player1">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Gragas.png">
+								<div class = "name">
+									하건펭수
+								</div>
+							</div>
+							<div class = "player2">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Vi.png">
+								<div class = "name">
+									원나물
+								</div>
+							</div>
+							<div class = "player3">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Ahri.png">
+								<div class = "name">
+									미북이
+								</div>
+							</div>
+							<div class = "player4">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Yasuo.png">
+								<div class = "name">
+									아임 쏘리
+								</div>
+							</div>
+							<div class = "player5">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Sett.png">
+								<div class = "name">
+									참새크면비둘기
+								</div>
+							</div>
+						</div>
+						<div class = "team2">
+							<div class = "player6">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Aatrox.png">
+								<div class = "name">
+									스        know맨
+								</div>
+							</div>
+							<div class = "player7">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Taliyah.png">
+								<div class = "name">
+									221124
+								</div>
+							</div>
+							<div class = "player8">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Sylas.png">
+								<div class = "name">
+									Hide on bush
+								</div>
+							</div>
+							<div class = "player9">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Kaisa.png">
+								<div class = "name">
+									BRO Hena
+								</div>
+							</div>
+							<div class = "player10">
+								<img src = "../../dragontail-11.23.1\11.23.1\img\champion\Rell.png">
+								<div class = "name">
+									정훈이의 모험
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "line">
+						<img src = "../../vertical_line.png">
+					</div>
+
+					<div class = "block4">
+						<div class = "player_score">
+							LOLai<br> Score <br>
+						</div>
+						<div class = "lolai_score_letter">
+							SSS
+						</div>
+					</div>
+
+					<div class = "block5">
+						<button class = "button" onclick = "window.open('match_KR_6144528507_info.html');">
+							AI 매치분석<br>바로가기!
+						</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- mid_right : ad_right_1, ad_right_2, ad_right_3 -->
+		<div class = "mid_right">
+			<div class = "ad_right_1">
+				ad_right_1
+			</div>
+			<div class = "ad_right_2">
+				ad_right_2
+			</div>
+			<div class = "ad_right_3">
+				ad_right_3
+			</div>
+		</div>
+	</div>
+	<!-- div bottom : ad_bottom_1 -->
+	<div class = "bottom">
+		<div class = "ad_bottom_1">
+		</div>
+	</div>
+
+
+<script type = "text/javascript">
+
+
+//radar chart
+var chart_html = document.getElementById('radar-chart').getContext('2d');
+var myChart1 = new Chart(chart_html, {
+	type: 'radar',
+	data: {
+		labels: ["성장", "골드 획득", "생존", "전투", "오브젝트"],
+		datasets: [
+			{
+				label: "Hide on bush",
+				fill: true,
+				backgroundColor: "rgba(255,68,125,0.3)",
+				borderColor: "rgba(255,68,125,1)",
+				pointBorderColor: "#fff",
+				pointBackgroundColor: "rgba(245,37,37,0.7)",
+				data: [57.14285714285714, 49.120000000000005, 0.0, 40.068, 18.875]
+			},
+			{
+				label: "티어 평균",
+				fill: true,
+				backgroundColor: "rgba(130,130,190,0.2)",
+				borderColor: "rgba(130,130,190,0.7)",
+				pointBorderColor: "#fff",
+				pointBackgroundColor: "rgba(179,181,198,1)",
+				data: [54.900494359234386, 63.27333333333334, 40.0, 49.453, 40.544999999999995]
+			}
+		]
+	},
+	options: {
+		labels:{
+			font: {
+				color: "red"
+			}
+		},
+		scales: {
+			r:{
+				angleLines:{
+					display:true,
+					color:"rgba(160,160,160,1)"
+				},
+				pointLabels:{
+					color: "black",
+					font:{
+						size: 13,
+						weight: "bold"
+					}
+				},
+				suggestedMin: 0,
+				suggestedMax: 100,
+				grid:{
+					color: "rgba(130,130,130,0.8)"
+				}
+			}
+		},
+		plugins:{
+			legend: {
+				labels: {
+					boxWidth: 3
+				}
+			},
+			title: {
+				display: true,
+				text: 'Hide on bush님의 분석 결과',
+				color: "black",
+				font: {
+					size: 15
+				}
+			}
+		}
+	}
+});
+
+
+//Bar chart - LOlai score comparison
+var chart_bar_comparison = document.getElementById('bar-chart-comparison').getContext('2d');
+var myChart2 = new Chart(chart_bar_comparison, {
+	type: 'bar',
+	data : {
+		labels: ["하건펭수","원나물","미북이","아임 쏘리","참새크면비둘기","스        know맨","221124","Hide on bush","BRO Hena","정훈이의 모험"],
+		datasets: [{
+			label: '해당 매치 참여 플레이어들의 LOLai 점수',
+			data: [6236, 7223, 5829, 5497, 4295, 10276, 10423, 10333, 10199, 9303],
+			backgroundColor: [
+				'rgba(255, 99, 132, 0.2)',
+				'rgba(255, 159, 64, 0.2)',
+				'rgba(255, 205, 86, 0.2)',
+				'rgba(75, 192, 192, 0.2)',
+				'rgba(54, 162, 235, 0.2)',
+				'rgba(153, 102, 255, 0.2)',
+				'rgba(201, 203, 207, 0.2)'
+			],
+			borderColor: [
+				'rgb(255, 99, 132)',
+				'rgb(255, 159, 64)',
+				'rgb(255, 205, 86)',
+				'rgb(75, 192, 192)',
+				'rgb(54, 162, 235)',
+				'rgb(153, 102, 255)',
+				'rgb(201, 203, 207)'
+			],
+			borderWidth: 1
+		}]
+	},
+	options:{
+		scales:{
+			y: {
+				beginAtZero: true
+			}
+		}
+	}
+});
+
+
+//Line chart - gold
+var chart_line_gold = document.getElementById('chart_line_gold').getContext('2d');
+var myChart3 = new Chart(chart_line_gold, {
+	type: 'line',
+	data: {
+		datasets: [{
+			type: 'line',
+			label: 'Hide on bush',
+			borderColor: 'rgb(100, 20, 130)',
+			pointBackgroundColor: 'rgba(100, 20, 130, 0.7)',
+			data: [500, 3051, 4725, 6143, 7368]
+		},{
+			type: 'line',
+			label: '아군팀 총합',
+			borderColor: 'rgb(175, 42, 30)',
+			pointBackgroundColor: 'rgba(175, 42, 30, 0.7)',
+			data: [2500, 15578, 29222, 39803, 50334],
+		},{
+			type: 'line',
+			label: '상대팀 총합',
+			borderColor: 'rgb(75, 192, 192)',
+			pointBackgroundColor: 'rgba(75, 192, 192, 0.7)',
+			data: [2500, 13121, 23321, 30381, 37237],
+		}],
+		labels: ['0분', '9분', '14분', '18분', '22분']
+	},
+	options:{
+		plugins:{
+			legend: {
+				labels: {
+					boxWidth: 3
+				}
+			},
+			title: {
+				display: true,
+				text: '골드 획득량',
+				color: "black",
+				font: {
+					size: 15
+				}
+			}
+		}
+	}
+});
+
+//Line chart - damages/level
+var chart_line_etc = document.getElementById('chart_line_etc').getContext('2d');
+var myChart4 = new Chart(chart_line_etc, {
+	type: 'line',
+	data: {
+		datasets: [{
+			type: 'line',
+			label: 'Hide on bush',
+			borderColor: 'rgb(100, 20, 130)',
+			pointBackgroundColor: 'rgba(100, 20, 130, 0.7)',
+			data: [0, 1956, 3539, 4446, 6253]
+		},{
+			type: 'line',
+			label: '아군팀 평균',
+			borderColor: 'rgb(175, 42, 30)',
+			pointBackgroundColor: 'rgba(175, 42, 30, 0.7)',
+			data: [0, 2796, 6540, 9271, 13046],
+		},{
+			type: 'line',
+			label: '상대팀 평균',
+			borderColor: 'rgb(75, 192, 192)',
+			pointBackgroundColor: 'rgba(75, 192, 192, 0.7)',
+			data: [0, 2482, 4933, 7456, 10142],
+		}],
+		labels: ['0분', '9분', '14분', '18분', '22분']
+	},
+	options:{
+		plugins:{
+			legend: {
+				labels: {
+					boxWidth: 3
+				}
+			},
+			title: {
+				display: true,
+				text: '상대에게 가한 총 데미지',
+				color: "black",
+				font: {
+					size: 15
+				}
+			}
+		}
+	}
+});
+
+//Line chart - damages/level
+var chart_line_etc2 = document.getElementById('chart_line_etc2').getContext('2d');
+var myChart4_2 = new Chart(chart_line_etc2, {
+	type: 'line',
+	data: {
+		datasets: [
+		{
+			type: 'line',
+			label: '플레이어 레벨',
+			borderColor: 'rgb(175, 53, 122)',
+			pointBackgroundColor: 'rgba(175, 53, 122, 0.7)',
+			data: [1, 7, 9, 11, 12],
+		},
+		{
+			type: 'line',
+			label: '플레이어 CS',
+			borderColor: 'rgb(75, 192, 192)',
+			pointBackgroundColor: 'rgba(75, 192, 192, 0.7)',
+			data: [0, 64, 101, 142, 170],
+		}],
+		labels: ['0분', '9분', '14분', '18분', '22분']
+	},
+	options:{
+		plugins:{
+			legend: {
+				labels: {
+					boxWidth: 3
+				}
+			},
+			title: {
+				display: true,
+				text: '플레이어 CS/레벨',
+				color: "black",
+				font: {
+					size: 15
+				}
+			}
+		}
+	}
+});
+
+
+//polar area chart - positive
+var chart_polar_positive = document.getElementById('polar-chart-positive').getContext('2d');
+var myChart5 = new Chart(chart_polar_positive, {
+	type: 'polarArea',
+	data: {
+		labels: [
+			'잃은 포탑 수',
+			'챔피언 숙련도',
+			'골드 사용량',
+			'골드 획득량',
+			'어시스트'
+		],
+		datasets: [{
+			label: 'My First Dataset',
+			data: [35.060483870967744, 100.0, 66.02822580645162, 74.2741935483871, 20.030241935483872],
+			backgroundColor: [
+				'rgb(255, 99, 132)',
+				'rgb(75, 192, 192)',
+				'rgb(255, 205, 86)',
+				'rgb(201, 203, 207)',
+				'rgb(54, 162, 235)'
+			]
+		}]
+	},
+	options:{
+		scales: {
+			r:{
+				angleLines:{
+					display:true,
+					color:"rgba(160,160,160,1)"
+				},
+				suggestedMin: 0,
+				suggestedMax: 100,
+				grid:{
+					color: "rgba(130,130,130,0.8)"
+				}
+			}
+		},
+	}
+});
+
+//polar area chart - negative
+var chart_polar_negative = document.getElementById('polar-chart-negative').getContext('2d');
+var myChart6 = new Chart(chart_polar_negative, {
+	type: 'polarArea',
+	data: {
+		labels: [
+			'타워에 가한 딜량',
+			'챔피언에 가한 물리데미지 수',
+			'와드 설치 수',
+			'힐을 제공한 유닛 수',
+			'물리데미지 수'
+		],
+		datasets: [{
+			label: 'My First Dataset',
+			data: [33.96820139118913, 3.4282875124213317, 20.049685326266975, 20.016561775422325, 100.0],
+			backgroundColor: [
+				'rgb(255, 99, 132)',
+				'rgb(75, 192, 192)',
+				'rgb(255, 205, 86)',
+				'rgb(201, 203, 207)',
+				'rgb(54, 162, 235)'
+			]
+		}]
+	},
+	options:{
+		scales: {
+			r:{
+				angleLines:{
+					display:true,
+					color:"rgba(160,160,160,1)"
+				},
+				suggestedMin: 0,
+				suggestedMax: 100,
+				grid:{
+					color: "rgba(130,130,130,0.8)"
+				}
+			}
+		},
+	}
+});
+
+
+</script>
+
+</body>
+
+<footer>
+	<p>
+		LOLai.net isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+	</p>
+</footer>
+
+</html>

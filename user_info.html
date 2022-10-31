@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang = "ko">
+
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://cdn.rawgit.com/theus/chart.css/v1.0.0/dist/chart.css" />
+
+		<link rel = "stylesheet" type = "text/css" href = "../../style_user_info.css">
+		<title> 롤분석은 롤파고! </title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<div class = "boxAll">
+			<div class = "box1">
+				<div class = logoBox>
+					<img src="../../logo_3.png" width="300">
+				</div>
+
+				<div class = "searchBox">
+					<form action = "py\q_w.py" method = "post">
+						<div class = "div1">
+							<img src="../../search_box.png" class="searchbox_img"/>
+							<input type = "search" name = "nickname" placeholder="분석할 소환사 이름을 입력해주세요!" autocomplete="off">
+						</div>
+						<div class = "div2">
+								 <input type="submit" value = "">
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class = "box2">
+				<div class = "adBox1">
+					{AD1_h}
+				</div>
+
+				<div class = "box2_2">
+					<div class = "userinfoBox_big">
+						<div class = "userinfoBox">
+							<div class = "name">
+								{nickname_h} 갱신하기
+							</div>
+							<div class = "infoBox">
+								<img src = "../../info_box.png" class="info_box_img"/>
+								<img src = "../../tier_emblem.png" class ="tier_emblem" />
+								<div class = "tier_explain">
+									<div class = "top">
+									SOLO 5 X 5<br>
+									<div class = "font_color">
+									{tier_name_h}<br>
+									{tier_number_h}<br>
+									{leaguePoints_h}<br><br>
+									</div>
+									</div>
+
+									<div class = "bottom">
+									SEASON 11 <br>
+									{match_h} Matches<br>
+									{win_h} WINS<br>
+									{lose_h} LOSES <br>
+									<div class = "font_color">
+									({wrate_h} %)
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+						<div class = "lolpagoscoreBox">
+							<img src = "../../info_box.png" class="score_box_img"/>
+							<div class = "lolpagoscore_title">
+							LOLPAGO<br>SCORE
+							</div>
+							<div class = "lolpagoscore_grade">
+								{GRADE_h}
+							</div>
+							<div class = "lolpagoscore_score">
+								{lolpagoscore_score_h}
+							</div>
+							<div class = "lolpagoscore_explanation">
+								LOLPAGO SCORE는 해당 유저의 최근 10게임에 대한 인공지능 LOLPAGO의 분석점수 입니다.
+							</div>
+						</div>
+
+						<div class = generalAnalysisBox>
+							<img src = "../../info_box.png" class="generalanalysis_box_img"/>
+							<div class = "comment">
+							LOLPAGO V.1.0.0는 RIOT 공식 데이터베이스를 사용한 머신러닝 학습을 통해 분석합니다.
+							</div>
+
+							<div class = "title">
+								"{nickname_h}" 님의<br> LOLPAGO 인공지능 분석 결과 (최근 10게임)<br>
+							</div>
+
+							<div class = "grade">
+							</div>
+
+							<div class = "player_chart">
+								<div class = "chart_box">
+									<div class = "chart_title">
+										{nickname_h}
+									</div>
+									<div class="charts charts--vertical">
+										<div class="charts__chart chart--p100  chart--blue    chart--hover">
+										</div>
+										<div class="charts__chart chart--p30  chart--yellow    chart--hover">
+										</div>
+										<div class="charts__chart chart--p10  chart--green   chart--hover">
+										</div>
+										<div class="charts__chart chart--p40  chart--red     chart--hover">
+										</div>
+										<div class="charts__chart chart--p20  chart--grey  chart--hover">
+										</div>
+									</div>
+									<div class = "chart_percentage">
+										100% &nbsp;&nbsp;80%&nbsp;&nbsp; 60%
+									</div>
+									<div class = "chart_percentage_2">
+										&nbsp; 40%&nbsp;&nbsp;  20%
+									</div>
+									<div class = "chart_explanation">
+										매력&nbsp;&nbsp;&nbsp;&nbsp;골드&nbsp;  생존력&nbsp;  전투력&nbsp;  성장력
+									</div>
+								</div>
+							</div>
+
+							<div class = "grade_comment">
+								<span class = "sen1"> (동티어 평균 = 50%)</span><br> <br>
+								해당 분석결과는 플레이어가 최근에 플레이한 10게임을 동티어 데이터베이스를 사용하여 머신러닝 학습을 통해 분석한 결과입니다.<br>
+								최고 SSS, 최하 F 등급까지 존재합니다.
+							</div>
+
+							<div class = "positive">
+								<img src = "../../black_round_box.png" class="positive_box_img"/>
+								<div class = "title">
+									{nickname_h}님의 승리의 주요원인은 다음과 같습니다.
+								</div>
+								<div class = "factor1">
+									<div class = "factor_title">
+										{p_f_1_t_h}
+									</div>
+									<div class = "factor_number">
+										{p_f_1_n_h}
+									</div>
+									<div class = "factor_grade">
+										{p_f_1_g_h}
+									</div>
+									<div class = "factor_average">
+										해당 티어 플레이어 평균: {p_f_1_a_h}
+									</div>
+								</div>
+								<div class = "factor2">
+									<div class = "factor_title">
+										{p_f_2_t_h}
+									</div>
+									<div class = "factor_number">
+										{p_f_2_n_h}
+									</div>
+									<div class = "factor_grade">
+										{p_f_2_g_h}
+									</div>
+									<div class = "factor_average">
+										해당 티어 플레이어 평균: {p_f_2_a_h}
+									</div>
+								</div>
+							</div>
+
+							<div class = "negative">
+								<img src = "../../black_round_box.png" class="negative_box_img"/>
+								<div class = "title">
+									{nickname_h}님의 패배의 주요원인은 다음과 같습니다.
+								</div>
+
+								<div class = "factor1">
+									<div class = "factor_title">
+										{n_f_1_t_h}
+									</div>
+									<div class = "factor_number">
+										{n_f_1_n_h}
+									</div>
+									<div class = "factor_grade">
+										{n_f_1_g_h}
+									</div>
+									<div class = "factor_average">
+										해당 티어 플레이어 평균: {n_f_1_a_h}
+									</div>
+								</div>
+								<div class = "factor2">
+									<div class = "factor_title">
+										{n_f_2_t_h}
+									</div>
+									<div class = "factor_number">
+										{n_f_2_n_h}
+									</div>
+									<div class = "factor_grade">
+										{n_f_2_g_h}
+									</div>
+									<div class = "factor_average">
+										해당 티어 플레이어 평균: {n_f_2_a_h}
+									</div>
+								</div>
+
+							</div>
+
+							<div class = "expected_box">
+								<div class = "expected_line_win_rate">
+									라인전 예상 승률<br>
+									<div class = "letter_color">
+										{expected_line_w_r_h}
+									</div>
+								</div>
+
+								<div class = "expected_promotion_rate">
+									다음 티어로 승급할 확률<br>
+									<div class = "letter_color">
+										{expected_promo_r_h}
+									</div>
+								</div>
+							</div>
+
+							<div class = "comment_bottom">
+								인공지능 플레이 분석에 사용되는 승리요인과 패배요인은 30개 이상의 분야로 세분화되어 있습니다.
+							</div>
+
+						</div>
+				</div>
+
+				<div class = "adBox2">
+					{AD2_h}
+				</div>
+			</div>
+
+
+			<div class = "box3">
+				<div class = "title">
+					‘{nickname_h}’ 님의<br>
+					LOLPAGO 인공지능 매치 상세분석 (최근 5게임)
+				</div>
+				<div class = "sub_title">
+					AI 매치 분석을 통해 최근 5게임의 상세분석 리포트를 읽어보세요!
+				</div>
+				<div class = "matchinfoBox">
+					<div class = "match_box">
+						<img src = "../../black_round_box.png" class="match_box_img"/>
+						<div class = "block1">
+							<div class = "sub1">
+							{m_1_win_h}<br>
+						</div>
+							{m_1_d_h}
+						</div>
+						<div class = "block2">
+							<img src = "../../champion_pic\riven.png" class="champion_pic"/>
+						</div>
+						<div class = "block3">
+							{m_1_k_h}<br>
+							{m_1_k_p_h}
+						</div>
+						<div class = "block4">
+							{m_1_cs_h} ({m_1_cs_pm_h}) CS<br>
+							{m_1_lv_h} Level
+						</div>
+						<div class = "block5">
+							{m_1_g_h}
+						</div>
+						<div class = "button">
+							<input type="submit" value = "">
+						</div>
+					</div>
+
+					<div class = "match_box">
+						<img src = "../../black_round_box.png" class="match_box_img"/>
+						<div class = "block1">
+							<div class = "sub1">
+								{m_2_win_h}<br>
+							</div>
+							{m_2_d_h}
+						</div>
+						<div class = "block2">
+							<img src = "../../champion_pic\riven.png" class="champion_pic"/>
+						</div>
+						<div class = "block3">
+							{m_2_k_h}<br>
+							{m_2_k_p_h}
+						</div>
+						<div class = "block4">
+							{m_2_cs_h} ({m_2_cs_pm_h}) CS<br>
+							{m_2_lv_h} Level
+						</div>
+						<div class = "block5">
+							{m_2_g_h}
+						</div>
+						<div class = "button">
+							<input type="submit" value = "">
+						</div>
+					</div>
+
+					<div class = "match_box">
+						<img src = "../../black_round_box.png" class="match_box_img"/>
+						<div class = "block1">
+							<div class = "sub1">
+								{m_3_win_h}<br>
+							</div>
+							{m_3_d_h}
+						</div>
+						<div class = "block2">
+							<img src = "../../champion_pic\riven.png" class="champion_pic"/>
+						</div>
+						<div class = "block3">
+							{m_3_k_h}<br>
+							{m_3_k_p_h}
+						</div>
+						<div class = "block4">
+							{m_3_cs_h} ({m_3_cs_pm_h}) CS<br>
+							{m_3_lv_h} Level
+						</div>
+						<div class = "block5">
+							{m_3_g_h}
+						</div>
+						<div class = "button">
+							<input type="submit" value = "">
+						</div>
+					</div>
+
+					<div class = "match_box">
+						<img src = "../../black_round_box.png" class="match_box_img"/>
+						<div class = "block1">
+							<div class = "sub1">
+								{m_4_win_h}<br>
+							</div>
+							{m_4_d_h}
+						</div>
+						<div class = "block2">
+							<img src = "../../champion_pic\riven.png" class="champion_pic"/>
+						</div>
+						<div class = "block3">
+							{m_4_k_h}<br>
+							{m_4_k_p_h}
+						</div>
+						<div class = "block4">
+							{m_4_cs_h} ({m_4_cs_pm_h}) CS<br>
+							{m_4_lv_h} Level
+						</div>
+						<div class = "block5">
+							{m_4_g_h}
+						</div>
+						<div class = "button">
+							<input type="submit" value = "">
+						</div>
+					</div>
+
+					<div class = "match_box">
+						<img src = "../../black_round_box.png" class="match_box_img"/>
+						<div class = "block1">
+							<div class = "sub1">
+								{m_5_win_h}<br>
+							</div>
+							{m_5_d_h}
+						</div>
+						<div class = "block2">
+							<img src = "../../champion_pic\riven.png" class="champion_pic"/>
+						</div>
+						<div class = "block3">
+							{m_5_k_h}<br>
+							{m_5_k_p_h}
+						</div>
+						<div class = "block4">
+							{m_5_cs_h} ({m_5_cs_pm_h}) CS<br>
+							{m_5_lv_h} Level
+						</div>
+						<div class = "block5">
+							{m_5_g_h}
+						</div>
+						<div class = "button">
+							<input type="submit" value = "">
+						</div>
+					</div>
+
+					<div class = "comment">
+						롤 API 서버의 상태에 따라 갱신이 늦어질 수 있습니다.
+					</div>
+
+				</div>
+			</div>
+	</div>
+	</body>
+
+	<footer>
+		<p>
+		LOLPAGO isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+		</p>
+	</footer>
+</html>
